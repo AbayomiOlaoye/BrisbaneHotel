@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/static/media/(.*)",
+      "destination": "/static/media/$1"
+    }
+  ]
+}
