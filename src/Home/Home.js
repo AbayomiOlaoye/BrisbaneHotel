@@ -1,9 +1,19 @@
 import React, { useEffect } from 'react';
+import aos from 'aos';
+import 'aos/dist/aos.css';
+import './Home.module.scss';
+import Navigation from '../Header/Navigation';
 
 const Home = () => {
-  useEffect(() => { document.title = 'Home'; }, []);
+  useEffect(() => {
+    aos.init({
+      duration: 500,
+    });
+  }, []);
   return (
-    <div>Home</div>
+    <div>
+      <Navigation />
+    </div>
   );
 };
 
