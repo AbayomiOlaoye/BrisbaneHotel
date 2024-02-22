@@ -24,6 +24,20 @@ const Navigation = () => {
   }, []);
 
   const [toggle, setToggle] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrolled = window.scrollY > window.innerHeight;
+    setHasScrolled(scrolled);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleMenuOpen = () => {
     setToggle(!toggle);
@@ -38,22 +52,9 @@ const Navigation = () => {
   };
 
   return (
-    <header>
+    <header className={`${hasScrolled ? styles.scrolled : ''}`}>
       <nav className={styles.navBar}>
         <div className={styles.navPre}>
-          {
-        toggle ? (
-          <AiFillCloseCircle onClick={handleMenuClose} className={styles.exitMenu} />
-        ) : (
-          <img
-            src={menu}
-            alt="menu icon"
-            onClick={handleMenuOpen}
-            className={styles.mobileMenuIcon}
-          />
-        )
-      }
-
           <Link to="/" className={styles.navLink}>
             <img
               src={brisbaneDeep}
@@ -61,6 +62,26 @@ const Navigation = () => {
               className={styles.navLogo}
             />
           </Link>
+          <div className={styles.dividerDiv}>
+            <button
+              type="button"
+              className={styles.button}
+            >
+              Book Now
+            </button>
+            {
+              toggle ? (
+                <AiFillCloseCircle onClick={handleMenuClose} className={styles.exitMenu} />
+              ) : (
+                <img
+                  src={menu}
+                  alt="menu icon"
+                  onClick={handleMenuOpen}
+                  className={styles.mobileMenuIcon}
+                />
+              )
+            }
+          </div>
         </div>
         {toggle && (
         <div className={styles.navLinksMob}>
@@ -96,6 +117,22 @@ const Navigation = () => {
               </a>
             </li>
           </ul>
+          <div className={styles.logger}>
+            <button
+              type="button"
+              className={styles.button}
+              // onClick={onClick}
+            >
+              Join
+            </button>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={handleMenuClose}
+            >
+              Log In
+            </button>
+          </div>
         </div>
         )}
         <div className={styles.navLinks}>
@@ -131,14 +168,28 @@ const Navigation = () => {
               </a>
             </li>
           </ul>
+          <button
+            type="button"
+            className={styles.button}
+          >
+            Book Now
+          </button>
+          <div className={styles.logger}>
+            <button
+              type="button"
+              className={styles.button}
+            >
+              Join
+            </button>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={handleMenuClose}
+            >
+              Log In
+            </button>
+          </div>
         </div>
-        <button
-          type="button"
-          className={styles.button}
-          // onClick={onClick}
-        >
-          Book Now
-        </button>
         <BsArrowUpCircleFill onClick={scrollToTop} className={styles.scroll} />
       </nav>
 

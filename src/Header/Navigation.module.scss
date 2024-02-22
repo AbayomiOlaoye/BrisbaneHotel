@@ -1,0 +1,89 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+/************/
+
+
+header {
+  width: 100%;
+  height: 66px;
+  padding: 0.5rem;
+  background: linear-gradient(182.26deg, rgba(0, 0, 0, 0.2) 1.89%, rgba(0, 0, 0, 0) 98.11%),
+  linear-gradient(0deg, rgba(156, 76, 43, 0.51), rgba(156, 76, 43, 0.51));
+  
+  .navBar {
+    margin: 0 auto;
+    .navPre {
+      @extend .flex;
+      @extend .justContentSpaceBtw;
+      @extend .alignItemsCenter;
+      .navLink {
+        width: 100%;
+        .navLogo {
+          width: 20%;
+        }
+      }
+
+      .dividerDiv {
+        width: 100%;
+        @extend .flex;
+        @extend .alignItemsCenter;
+        gap: 2rem;
+
+        .button {
+          width: 135px;
+          height: 46px;
+          border-radius: 20px;
+          border: none;
+        }
+      }
+    }
+
+    .navLinks {
+      display: none;
+    }
+
+    .scroll {
+      position: absolute;
+      top: 80vh;
+    }
+  }
+}

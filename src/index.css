@@ -1,13 +1,93 @@
+:root {
+  /* Colour */
+  --black: #000;
+  --white: #fff;
+  --text--green: #5d9d53;
+  --text--grey: #606060;
+  --text--dark: #333232;
+  --palm: #c3ee00;
+  --menu: #f9f9f9;
+  --background: #0a562b;
+  --tint: #36ff8c;
+
+  /* Fonts & Sizes */
+  --inter: 'Inter';
+  --montserrat: 'Montserrat', sans-serif;
+
+  /* Width */
+  --w--100: 100%;
+  --w--90: 90%;
+  --w--80: 80%;
+  --max--100: 100%;
+
+  /* Alignment & Justfication */
+  --center: center;
+  --space--between: space-between;
+  --start: flex-start;
+  --flex: flex;
+  --block: block;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+  font-family: var(--montserrat);
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+menu {
+  list-style-type: none;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-size: 4vw;
+  line-height: 1.4;
+  font-family:
+    'Montserrat',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 956px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
 }
