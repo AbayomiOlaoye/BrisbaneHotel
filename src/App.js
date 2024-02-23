@@ -3,9 +3,9 @@ import Layout from './Router/Layout';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Layout />
-    </div>
+    </>
   );
 }
 

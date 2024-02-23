@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import aos from 'aos';
 import 'aos/dist/aos.css';
-import './Home.module.scss';
 import Navigation from '../Header/Navigation';
+import LandingPage from './LandingPage';
 
 const Home = () => {
   useEffect(() => {
@@ -11,9 +11,10 @@ const Home = () => {
     });
   }, []);
   return (
-    <div>
+    <>
       <Navigation />
-    </div>
+      <LandingPage />
+    </>
   );
 };
 
