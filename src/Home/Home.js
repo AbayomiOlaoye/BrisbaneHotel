@@ -3,6 +3,8 @@ import aos from 'aos';
 import 'aos/dist/aos.css';
 import Navigation from '../Header/Navigation';
 import LandingPage from './LandingPage';
+import About from '../About/About';
+import Rooms from '../Rooms/Rooms';
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +16,8 @@ const Home = () => {
     <>
       <Navigation />
       <LandingPage />
+      <About />
+      <Rooms />
     </>
   );
 };
