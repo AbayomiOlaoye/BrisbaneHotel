@@ -3,7 +3,7 @@ const rooms = [
     id: 1,
     name: 'Standard Room',
     info: 'MAX 1 GUEST/1 BED SPACE',
-    price: 20000,
+    price: '20,000',
     description: 'Indulge in comfort and convenience in our Standard Room at Brisbane Hotel & Suites. Designed with your utmost satisfaction in mind, our Standard Room offers a cozy retreat for your stay.',
     features: [
       'Complimentary Wi-Fi',
@@ -27,7 +27,7 @@ const rooms = [
     id: 2,
     name: 'Deluxe Room',
     info: 'MAX 2 GUESTS/2 BED SPACES',
-    price: 30000,
+    price: '30,000',
     description: 'Experience unparalleled comfort and sophistication in our Deluxe Room at Brisbane Hotel & Suites. Designed to exceed your expectations, our Deluxe Room offers a luxurious retreat for your stay.',
     features: [
       'Complimentary Wi-Fi',
@@ -51,7 +51,7 @@ const rooms = [
     id: 3,
     name: 'Executive Room',
     info: 'MAX 2 GUESTS/2 BED SPACES',
-    price: 40000,
+    price: '40,000',
     description: 'Welcome to the epitome of refinement and comfort at Brisbane Hotel & Suites. Our Executive Room offers an exclusive sanctuary where every detail is meticulously crafted to exceed your expectations.',
     features: [
       'Complimentary Wi-Fi',
@@ -75,7 +75,7 @@ const rooms = [
     id: 4,
     name: 'Executive Suite',
     info: 'MAX 2 GUESTS/2 BED SPACES',
-    price: 50000,
+    price: '50,000',
     description: 'Experience the pinnacle of luxury and sophistication in our Executive Suite at Brisbane Hotel & Suites. It was designed to surpass your every expectation. Our Executive Suite offers a lavish retreat for you.',
     features: [
       'Complimentary Wi-Fi',
@@ -99,7 +99,7 @@ const rooms = [
     id: 5,
     name: 'Royal Suite',
     info: 'MAX 2 GUESTS/2 BED SPACES',
-    price: 60000,
+    price: '60,000',
     description: 'Welcome to an exquisite realm of luxury and grandeur at Brisbane Hotel & Suites. Our Royal Suite embodies opulence and sophistication, offering an unparalleled retreat for the most discerning guests.',
     features: [
       'Complimentary Wi-Fi',
@@ -123,7 +123,7 @@ const rooms = [
     id: 6,
     name: 'Double Royal Suite',
     info: 'MAX 2 GUESTS/2 BED SPACES',
-    price: 80000,
+    price: '80,000',
     description: 'Step into a world of unparalleled luxury and sophistication with our Double Royal Suites. Designed to exceed your expectations, these suites offer a lavish retreat for those seeking the ultimate indulgence.',
     features: [
       'Complimentary Wi-Fi',
