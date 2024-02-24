@@ -30,10 +30,10 @@ const Facilities = () => {
                 <h3>{facility.name}</h3>
                 <FaLongArrowAltRight className={styles.arrow} />
               </div>
-              <MdOutlineKeyboardArrowLeft className={styles.arrow} />
-              <MdOutlineKeyboardArrowRight className={styles.arrow} />
             </div>
           ))}
+        <MdOutlineKeyboardArrowLeft className={styles.arrow} />
+        <MdOutlineKeyboardArrowRight className={styles.arrow} />
       </div>
       {!showAllFacilities && (
         <button type="button" className={styles.seeMoreBtn} onClick={handleSeeMore}>

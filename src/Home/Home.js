@@ -6,6 +6,7 @@ import LandingPage from './LandingPage';
 import About from '../About/About';
 import Rooms from '../Rooms/Rooms';
 import Facilities from '../Facilities/Facilities';
+import Guests from '../Guests/Guests';
 
 const Home = () => {
   useEffect(() => {
@@ -20,6 +21,7 @@ const Home = () => {
       <About />
       <Rooms />
       <Facilities />
+      <Guests />
     </>
   );
 };

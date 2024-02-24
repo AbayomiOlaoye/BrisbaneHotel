@@ -1,5 +1,5 @@
-import revOne from '../images/rev_one.jpg';
-import revTwo from '../images/rev_two.jpg';
+import revOne from '../images/rev_one.png';
+import revTwo from '../images/rev_two.png';
 
 const reviews = [
   {
