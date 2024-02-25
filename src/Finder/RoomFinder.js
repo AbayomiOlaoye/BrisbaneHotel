@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import styles from './RoomFinder.module.scss';
@@ -14,35 +15,55 @@ const RoomFinder = () => {
         </p>
       </article>
       <form className={styles.finderForm}>
-        <article className={styles.formGroup}>
-          <input
-            type="date"
-            id="checkIn"
-            name="checkIn"
-            placeholder="Check In"
-            className={styles.formInput}
-          />
-          <input
-            type="date"
-            id="checkOut"
-            name="checkOut"
-            placeholder="Check Out"
-            className={styles.formInput}
-          />
-          <input
-            type="number"
-            id="adults"
-            name="adults"
-            placeholder="1"
-            className={styles.formInput}
-          />
-          <input
-            type="number"
-            id="children"
-            name="0"
-            placeholder="Children"
-            className={styles.formInput}
-          />
+        <article className={styles.form}>
+          <div className={styles.formGroup}>
+            <label htmlFor="checkIn" className={styles.formLabel}>
+              Check In
+            </label>
+            <input
+              type="date"
+              id="checkIn"
+              name="checkIn"
+              placeholder="Check In"
+              className={styles.formInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="checkOut" className={styles.formLabel}>
+              Check Out
+            </label>
+            <input
+              type="date"
+              id="checkOut"
+              name="checkOut"
+              placeholder="Check Out"
+              className={styles.formInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="adults" className={styles.formLabel}>
+              Adults
+            </label>
+            <input
+              type="number"
+              id="adults"
+              name="adults"
+              placeholder="1"
+              className={styles.formInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="children" className={styles.formLabel}>
+              Children
+            </label>
+            <input
+              type="number"
+              id="children"
+              name="children"
+              placeholder="0"
+              className={styles.formInput}
+            />
+          </div>
         </article>
         <Button />
       </form>
