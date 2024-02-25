@@ -44,11 +44,13 @@ const Guests = () => {
         <div className={styles.reviewInfo}>
           <h3 className={styles.reviewName}>{review.name}</h3>
           <p className={styles.reviewRating}>
-            {
-              Array(review.rating).fill().map((_) => (
-                <span key={_.id} className={styles.star}>&#9733;</span>
-              ))
-            }
+            {review.rating.map((star) => (
+              <span
+                key={star.id}
+                className={styles.star}
+                dangerouslySetInnerHTML={{ __html: star }}
+              />
+            ))}
           </p>
           <p className={styles.reviewText}>{review.review}</p>
         </div>
