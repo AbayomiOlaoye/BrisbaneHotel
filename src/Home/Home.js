@@ -7,6 +7,7 @@ import About from '../About/About';
 import Rooms from '../Rooms/Rooms';
 import Facilities from '../Facilities/Facilities';
 import Guests from '../Guests/Guests';
+import RoomFinder from '../Finder/RoomFinder';
 
 const Home = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const Home = () => {
       <Rooms />
       <Facilities />
       <Guests />
+      <RoomFinder />
     </>
   );
 };
