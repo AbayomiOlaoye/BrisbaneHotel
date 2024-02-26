@@ -1,0 +1,119 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.roomDiv {
+  background-image: url('../images/room_bg.svg'), url('../images/trans_bg.png');
+  background-repeat: no-repeat no-repeat;
+  background-position: top left, center;
+  background-size: auto, cover;
+  padding: 0 0.5rem;
+  margin: 0 auto;
+
+  .subtitleA {
+    font-size: 2rem;
+    color: var(--brown);
+    max-width: 60%;
+    padding: 3rem 0.5rem 2rem;
+    margin-left: 4.5rem;
+    line-height: 40px
+  }
+
+  .introDiv {
+    width: 100%;
+    font-family: var(--averia);
+
+    .subtitleB {
+      display: none;
+    }
+
+    .introText {
+      max-width: 70%;
+      text-align: center;
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .rooms {
+    @extend .flexCol;
+    gap: 1rem;
+    
+    .room {
+      position: relative;
+
+      .roomImg {
+        border-radius: 30px, 30px, 0, 0;
+      }
+
+      .roomInfo {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        background: rgb(178,171,151);
+        background: linear-gradient(90deg, rgba(178,171,151,1) 0%, rgba(251,154,8,1) 100%);;    
+      
+        .desc {
+          @extend .flex;
+
+          color: var(--darkBrown);
+        }
+
+        .roomDesc {
+          
+          .roomFeatures {
+            @extend .flex;
+          }
+
+          .roomBtn {
+            @extend .flex;
+          }
+        }
+      }
+    }
+  }
+}
