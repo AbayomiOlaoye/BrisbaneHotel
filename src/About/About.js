@@ -2,19 +2,13 @@
 import React from 'react';
 import styles from './About.module.scss';
 import mobileBg from '../images/about.png';
-import logo from '../images/brisbaneDeep.png';
 import aboutBg from '../images/desk_about.png';
 import benefits from '../HotelInfo/benefits';
 
 const About = () => {
   return (
-    <>
-      <section className={styles.container}>
-        <img
-          src={logo}
-          alt="Brisbane logo"
-          className={styles.bgLogo}
-        />
+    <section className={styles.aboutContainer}>
+      <article className={styles.container}>
         <article className={styles.mobileDiv}>
           <h2 className={styles.subtitle}>HOSPITALITY AT ITS BEST</h2>
           <img
@@ -47,8 +41,8 @@ const About = () => {
           alt="nice views at Brisbane Hotel & Suites"
           className={styles.aboutImg}
         />
-      </section>
-      <section className={styles.benefits}>
+      </article>
+      <article className={styles.benefits}>
         {
           benefits.map((benefit) => (
             <article className={styles.benefitDiv} key={benefit.id}>
@@ -61,8 +55,8 @@ const About = () => {
             </article>
           ))
         }
-      </section>
-    </>
+      </article>
+    </section>
   );
 };
 

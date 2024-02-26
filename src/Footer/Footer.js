@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import styles from './Footer.module.scss';
-import logo from '../images/brisbaneDeep.png';
+import logo from '../images/brisbaneDeep.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

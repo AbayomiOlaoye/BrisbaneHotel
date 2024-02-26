@@ -12,7 +12,7 @@ import { BsArrowUpCircleFill } from 'react-icons/bs';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import styles from './Navigation.module.scss';
 import menu from '../images/menu.png';
-import brisbaneDeep from '../images/brisbaneDeep.png';
+import brisbaneDeep from '../images/brisbaneDeep.svg';
 
 const Navigation = () => {
   useEffect(() => {
@@ -52,7 +52,7 @@ const Navigation = () => {
   };
 
   return (
-    <header className={`${hasScrolled ? styles.scrolled : ''}`}>
+    <header className={`${hasScrolled ? styles.scrolled : ''} ${styles.header}`}>
       <nav className={styles.navBar}>
         <div className={styles.navPre}>
           <Link to="/" className={styles.navLink}>

@@ -49,7 +49,7 @@
 
 .container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   @extend .relative;
   color: #fff;
@@ -63,17 +63,41 @@
   //   opacity: 0;
   //   transition: opacity 0.5s ease;
   // }
+  .slider {
+    @extend .absolute;
+    top: 40%;
+    left: 90%;
+    z-index: 5;
+    @extend .flexCol;
+    gap: 0.25rem;
+
+    .sliderBtn {
+      background: rgba(231, 178, 63, 0.4);
+      border: none;
+      color: #fff;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+
+      .icon {
+        width: 20px;
+      }
+
+      &:hover {
+        background: rgba(231, 178, 63, 1);
+      }
+    }
+  }
 
   .bgImg {
-    // position: absolute;
+    position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     z-index: -1;
   }
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.7);
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     position: absolute;
     top: 0;
@@ -83,8 +107,8 @@
     @extend .absolute;
     @extend .flex;
     @extend .alignItemsCenter;
-    top: 22%;
-    left: 65%;
+    top: 30%;
+    left: 63%;
     border: 0.63px solid rgba(231, 178, 63, 1);
     border-radius: 25px;
     font-family: var(--averia);
@@ -99,6 +123,7 @@
   }
 
   .titleDiv {
+    margin: 4rem 0;
     @extend .absolute;
     top: 35%;
     padding: 0 0.5rem;
@@ -107,13 +132,13 @@
 
     .title {
       text-transform: uppercase;
-      font-size: 2.25rem;
-      max-width: 70%;
+      font-size: 10vw;
+      max-width: 90%;
     }
 
     .heroText {
       font-family: var(--averia);
-      max-width: 300px;
+      max-width: 80%;
       font-size: 5vw;
     }
   }

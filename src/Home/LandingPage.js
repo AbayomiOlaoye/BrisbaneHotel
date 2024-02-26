@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable arrow-body-style */
@@ -46,8 +47,12 @@ const LandingPage = () => {
     <section className={styles.container}>
       <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
-        <HiOutlineChevronRight className={styles.icon} />
-        <HiOutlineChevronLeft className={styles.icon} />
+        <button type="button" className={styles.sliderBtn} onClick={() => {}}>
+          <HiOutlineChevronRight className={styles.icon} />
+        </button>
+        <button type="button" className={styles.sliderBtn} onClick={() => {}}>
+          <HiOutlineChevronLeft className={styles.icon} />
+        </button>
       </div>
 
       <div className={styles.overlay} />
