@@ -50,35 +50,35 @@ const Rooms = () => {
                 <div className={styles.roomDesc}>
                   <div className={styles.roomFeatures}>
                     <div className={styles.feature}>
-                      <MdOutlineRestaurant />
+                      <MdOutlineRestaurant className={styles.icon} />
                       <p className={styles.text}>
                         Free Breakfast
                       </p>
                     </div>
                     <div className={styles.feature}>
-                      <SlScreenDesktop />
+                      <SlScreenDesktop className={styles.icon} />
                       <p className={styles.text}>
                         Smart TV
                       </p>
                     </div>
                     <div className={styles.feature}>
-                      <MdOutlineWifi />
+                      <MdOutlineWifi className={styles.icon} />
                       <p className={styles.text}>
                         Free WiFi
                       </p>
                     </div>
                     <div className={styles.feature}>
-                      <MdEventAvailable />
+                      <MdEventAvailable className={styles.icon} />
                       <p className={styles.text}>
                         Available
                       </p>
                     </div>
-                  </div>
-                  <div className={styles.price}>
-                    <TbCurrencyNaira />
-                    <p className={styles.price}>
-                      {room.price}
-                    </p>
+                    <div className={styles.priceDiv}>
+                      <TbCurrencyNaira />
+                      <p className={styles.price}>
+                        {room.price}
+                      </p>
+                    </div>
                   </div>
                   <div className={styles.roomBtn}>
                     <h3 className={styles.roomName}>
@@ -103,7 +103,7 @@ const Rooms = () => {
         </button>
       )}
       {showAllRooms && (
-        <button type="button" className={styles.collapseBtn} onClick={handleCollapseRooms}>
+        <button type="button" className={styles.seeMoreBtn} onClick={handleCollapseRooms}>
           See less Rooms
         </button>
       )}
