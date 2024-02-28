@@ -90,7 +90,7 @@
       height: 310px;
 
       .roomImg {
-        border-radius: 30px, 30px, 0, 0;
+        border-radius: 30px 30px 0 0;
         height: inherit;
       }
 
@@ -178,7 +178,7 @@
               border-radius: 30px;
               color: var(--white);
               padding: 0.5rem 1rem;
-              transition: all 0.3s ease;
+              transition: all 0.6s ease;
 
               &:hover {
                 background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.4) 0%, rgba(230, 70, 19, 0) 100%),
@@ -208,7 +208,9 @@
     margin: 2rem auto;
     width: 60%;
     place-self: center;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
+    animation-name: zoom;
+    animation-duration: 0.6s;
 
     &:hover {
       color: var(--white);
@@ -218,4 +220,15 @@
       box-shadow: 0 2.5166666507720947px 2.5166666507720947px 0 rgba(255, 255, 255, 1);
     }
   }
+}
+
+// /* Add Animation */
+// .modal-content, #caption {  
+//   animation-name: zoom;
+//   animation-duration: 0.6s;
+// }
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
 }

@@ -1,0 +1,154 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.none {
+  display: none;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.container {
+  background-image: url('../images/facility_bg.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: var(--darkBrown);
+  padding: 0 0.5rem;
+
+  .subtitle {
+    font-size: 2rem;
+    color: var(--lightBrown);
+    max-width: 60%;
+    padding: 3rem 0 2rem;
+    line-height: 40px;
+  }
+
+  .facilities {
+    @extend .flex;
+    @extend .relative;
+    height: 250px;
+
+    .facility {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+      height: inherit;
+
+      .img {
+        height: inherit;
+      }
+
+      .text {
+        @extend .absolute;
+        @extend .flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        top: 84%;
+        height: 16%;
+        background: rgba(156, 76, 43, 0.6);
+        padding: 0.5rem;
+        width: 100%;
+        padding-right: 2rem;
+        @extend .alignItemsCenter;
+
+        .pointer {
+          color: var(--white);
+          font-size: 1.5rem;
+          width: 10%;
+    
+          .arrowLeft {
+            @extend .absolute;
+            top: 20%;
+            left: 3%;
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+
+          .arrowRight {
+            @extend .absolute;
+            top: -490%;
+            left: 90%;
+            cursor: pointer;
+            background: rgba(156, 76, 43, 0.6);
+            font-size: 1.5rem;
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+
+        .arrow {
+          @extend .none;
+        }
+
+        h4 {
+          color: var(--lightBrown);
+        }
+
+        h3 {
+          color: var(--white);
+          font-size: 1.05rem;
+        }
+      }
+    }
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+}
