@@ -56,7 +56,7 @@
   background-repeat: no-repeat;
   background-position: top right;
   background-color: var(--darkBrown);
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 3rem;
 
   .subtitle {
     font-size: 2rem;
@@ -80,12 +80,11 @@
     }
 
     .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
       height: inherit;
 
       .img {
         height: inherit;
+        background: rgba(95, 37, 14, 0.2);
       }
 
       .text {
@@ -103,13 +102,13 @@
 
         .pointer {
           color: var(--white);
-          font-size: 1.5rem;
+          font-size: 2rem;
           width: 10%;
     
           .arrowLeft {
             @extend .absolute;
-            top: 20%;
-            left: 3%;
+            top: 8%;
+            left: 0;
             cursor: pointer;
 
             &:hover {
@@ -119,11 +118,10 @@
 
           .arrowRight {
             @extend .absolute;
-            top: -490%;
-            left: 90%;
+            top: -525%;
+            left: 91%;
             cursor: pointer;
             background: rgba(156, 76, 43, 0.6);
-            font-size: 1.5rem;
 
             &:hover {
               opacity: 0.8;
@@ -145,6 +143,10 @@
         }
       }
     }
+  }
+
+  .seeMoreBtn {
+    @extend .none;
   }
 
   @keyframes fade {

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import styles from './Guests.module.scss';
 import reviews from '../HotelInfo/reviews';
+import logo from '../images/brisbaneDeep.svg';
 
 const Guests = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -37,26 +38,30 @@ const Guests = () => {
   };
 
   const renderReviewCard = (review) => (
-    <div className={styles.reviewCard} key={review.id}>
-      <div className={styles.reviewContent}>
-        <MdOutlineKeyboardArrowLeft onClick={handlePrev} className={styles.arrow} />
-        <MdOutlineKeyboardArrowRight onClick={handlePrev} className={styles.arrow} />
+    <>
+      <div className={styles.reviewContent} key={review.id}>
         <img src={review.image} alt="review" className={styles.reviewImage} />
         <div className={styles.reviewInfo}>
-          <h3 className={styles.reviewName}>{review.name}</h3>
-          <p className={styles.reviewRating}>
-            {review.rating.map((star) => (
-              <span
-                key={star.id}
-                className={styles.star}
-                dangerouslySetInnerHTML={{ __html: star }}
-              />
-            ))}
-          </p>
+          <article className={styles.divider}>
+            <h4 className={styles.reviewName}>{review.name}</h4>
+            <div className={styles.spanner} />
+            <p className={styles.title}>
+              {review.location}
+            </p>
+            <p className={styles.reviewRating}>
+              {review.rating.map((star) => (
+                <span
+                  key={star.id}
+                  className={styles.star}
+                  dangerouslySetInnerHTML={{ __html: star }}
+                />
+              ))}
+            </p>
+          </article>
           <p className={styles.reviewText}>{review.review}</p>
         </div>
       </div>
-    </div>
+    </>
   );
 
   const renderSlider = () => (
@@ -89,6 +94,13 @@ const Guests = () => {
           )}
         {windowWidth >= 768 && renderSlider()}
       </article>
+      <MdOutlineKeyboardArrowLeft onClick={handlePrev} className={styles.slidePrev} />
+      <MdOutlineKeyboardArrowRight onClick={handlePrev} className={styles.slideNext} />
+      <img
+        src={logo}
+        alt="Main logo"
+        className={styles.logo}
+      />
     </section>
   );
 };
