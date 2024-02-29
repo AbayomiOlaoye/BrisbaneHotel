@@ -1,0 +1,145 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @extend .relative;
+  color: #fff;
+
+  // .slide {
+  //   // position: absolute;
+  //   width: 100%;
+  //   height: 400px;
+  //   background-size: cover;
+  //   background-position: center;
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease;
+  // }
+  .slider {
+    @extend .absolute;
+    top: 40%;
+    left: 90%;
+    z-index: 5;
+    @extend .flexCol;
+    gap: 0.25rem;
+
+    .sliderBtn {
+      background: rgba(231, 178, 63, 0.4);
+      border: none;
+      color: #fff;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+
+      .icon {
+        width: 20px;
+      }
+
+      &:hover {
+        background: rgba(231, 178, 63, 1);
+      }
+    }
+  }
+
+  .bgImg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .date {
+    @extend .absolute;
+    @extend .flex;
+    @extend .alignItemsCenter;
+    top: 30%;
+    left: 63%;
+    border: 0.63px solid rgba(231, 178, 63, 1);
+    border-radius: 25px;
+    font-family: var(--averia);
+    padding: 0.5rem 0.85rem;
+
+    .icon {
+      color: rgba(231, 178, 63, 1);
+      padding-right: 0.15rem;
+      width: 18px;
+      display: block;
+    }
+  }
+
+  .titleDiv {
+    margin: 4rem 0;
+    @extend .absolute;
+    top: 35%;
+    padding: 0 0.5rem;
+    @extend .flexCol;
+    gap: 1rem;
+
+    .title {
+      text-transform: uppercase;
+      font-size: 10vw;
+      max-width: 90%;
+    }
+
+    .heroText {
+      font-family: var(--averia);
+      max-width: 80%;
+      font-size: 5vw;
+    }
+  }
+}

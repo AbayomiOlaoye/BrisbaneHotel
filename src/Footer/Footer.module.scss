@@ -1,0 +1,172 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.footerContainer {
+  background: #9C4C2B;
+  color: var(--white);
+  padding: 2rem 0.5rem 1rem;
+
+  .form {
+    @extend .relative;
+    @extend .flexCol;
+    @extend .alignItemsCenter;
+    gap: 1rem;
+  
+    .titleMob {
+      font-size: 0.75rem;
+      max-width: 70%;
+      @extend .auto;
+      text-align: center;
+    }
+
+    .submitButton {
+      @extend .absolute;
+      background-color: var(--lightBrown);
+      border: none;
+      padding: 0.5rem;
+      border-radius: 15px;
+      left: 70%;
+      top: 55%;
+      transition: all 0.6s ease;
+
+      &:hover {
+        color: var(--white);
+        background-color: #9C4C2B;
+      }
+    }
+
+    .emailInput {
+      background: #E7B23F54;
+      border: none;
+      width: 80%;
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      color: #fff;
+      margin: 0 auto;
+      font-size: 0.85rem;
+    }
+
+    input[type="email"]::placeholder {
+      color: #E7B23F;
+    }
+  }
+
+  svg {
+    color: rgba(231, 178, 63, 1);
+    width: 36px;
+  }
+
+  .footerContent {
+    .footerLogoDesk {
+      @extend .none;
+    }
+
+    .footerText {
+      @extend .flex;
+      margin-top: 1.5rem;
+
+      .locationDiv,
+      .contact,
+      .emailDiv {
+        @extend .flex;
+        gap: 0.15rem;
+        font-size: 14px;
+
+        a {
+          font-size: 14px;
+          color: #fff;
+        }
+      }
+
+      // .locationDiv {
+      //   width: 60%;
+      // }
+    }
+  }
+
+  .map {
+    border-bottom: 1px solid #fff;
+    .formDesk {
+      @extend .none;
+    }
+
+    .socialPage {
+      @extend .flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+
+      .footerLogo {
+        width: 20%;
+      }
+    }
+
+    .mapIframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      margin: 1rem 0 2rem;
+    }
+  }
+
+  .footerBottom {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-top: 1rem;
+    color: var(--lightBrown);
+
+    a {
+      color: var(--white);
+      padding-top: 0.5rem;
+    }
+  }
+}
