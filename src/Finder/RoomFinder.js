@@ -1,10 +1,29 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable arrow-body-style */
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './RoomFinder.module.scss';
 import Button from '../Component/Button';
 
 const RoomFinder = () => {
+  const [formData, setFormData] = useState({
+    checkIn: '',
+    checkOut: '',
+    adults: 1,
+    children: 0,
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (detail) => {
+    const message = `Hello, I would like to ask for a reservation with the following information: Check-in date: ${detail.checkIn}, Check-out date: ${detail.checkOut}, ${detail.adults} Adults, and ${detail.children} children`;
+    window.open(`https://wa.me/${2348031391167}?text=${message}`, '_blank');
+  };
+
   return (
     <section className={styles.finderContainer}>
       <article className={styles.finderContent}>
@@ -26,6 +45,9 @@ const RoomFinder = () => {
               name="checkIn"
               placeholder="Check In"
               className={styles.formInput}
+              value={formData.checkIn}
+              onChange={handleInputChange}
+              required
             />
           </div>
           <div className={styles.formGroup}>
@@ -38,6 +60,9 @@ const RoomFinder = () => {
               name="checkOut"
               placeholder="Check Out"
               className={styles.formInput}
+              value={formData.checkOut}
+              onChange={handleInputChange}
+              required
             />
           </div>
           <div className={styles.formGroup}>
@@ -50,6 +75,9 @@ const RoomFinder = () => {
               name="adults"
               placeholder="1"
               className={styles.formInput}
+              value={formData.adults}
+              onChange={handleInputChange}
+              required
             />
           </div>
           <div className={styles.formGroup}>
@@ -62,10 +90,12 @@ const RoomFinder = () => {
               name="children"
               placeholder="0"
               className={styles.formInput}
+              value={formData.children}
+              onChange={handleInputChange}
             />
           </div>
         </article>
-        <Button />
+        <Button action={() => handleSubmit(formData)} />
       </form>
     </section>
   );

@@ -10,11 +10,12 @@ import styles from './Button.module.scss';
 //   window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
 // };
 
-const Button = ({ text }) => {
+const Button = ({ text, action }) => {
   return (
     <button
       type="button"
       className={styles.button}
+      onClick={action}
     >
       {text}
     </button>
@@ -27,6 +28,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   text: PropTypes.string,
+  action: PropTypes.func.isRequired,
 };
 
 export default Button;
