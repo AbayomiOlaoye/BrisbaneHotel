@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import styles from './Guests.module.scss';
 import reviews from '../HotelInfo/reviews';
-import logo from '../images/brisbaneDeep.svg';
+// import logo from '../images/brisbaneDeep.svg';
 
 const Guests = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -14,20 +15,17 @@ const Guests = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    }, 3000);
+
     window.addEventListener('resize', handleResize);
 
     return () => {
+      clearInterval(interval);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  // const renderStars = (rating) => {
-  //   const stars = [];
-  //   for (let i = 0; i < rating; i + 1) {
-  //     stars.push(<span key={i} className={styles.star}>&#9733;</span>);
-  //   }
-  //   return stars;
-  // };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
@@ -45,7 +43,7 @@ const Guests = () => {
           <article className={styles.divider}>
             <h4 className={styles.reviewName}>{review.name}</h4>
             <div className={styles.spanner} />
-            <p className={styles.title}>
+            <p className={styles.location}>
               {review.location}
             </p>
             <p className={styles.reviewRating}>
@@ -94,13 +92,12 @@ const Guests = () => {
           )}
         {windowWidth >= 768 && renderSlider()}
       </article>
-      <MdOutlineKeyboardArrowLeft onClick={handlePrev} className={styles.slidePrev} />
-      <MdOutlineKeyboardArrowRight onClick={handlePrev} className={styles.slideNext} />
-      <img
-        src={logo}
-        alt="Main logo"
-        className={styles.logo}
-      />
+      <button type="button" className={styles.slidePrev} onClick={handlePrev}>
+        <MdOutlineKeyboardArrowLeft className={styles.prev} />
+      </button>
+      <button type="button" className={styles.slideNext} onClick={handlePrev}>
+        <MdOutlineKeyboardArrowRight className={styles.next} />
+      </button>
     </section>
   );
 };

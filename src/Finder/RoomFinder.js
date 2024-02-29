@@ -18,7 +18,7 @@ const RoomFinder = () => {
         <article className={styles.form}>
           <div className={styles.formGroup}>
             <label htmlFor="checkIn" className={styles.formLabel}>
-              Check In
+              Check In:
             </label>
             <input
               type="date"
@@ -30,7 +30,7 @@ const RoomFinder = () => {
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="checkOut" className={styles.formLabel}>
-              Check Out
+              Check Out:
             </label>
             <input
               type="date"
@@ -42,7 +42,7 @@ const RoomFinder = () => {
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="adults" className={styles.formLabel}>
-              Adults
+              Adults:
             </label>
             <input
               type="number"
@@ -54,7 +54,7 @@ const RoomFinder = () => {
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="children" className={styles.formLabel}>
-              Children
+              Children:
             </label>
             <input
               type="number"

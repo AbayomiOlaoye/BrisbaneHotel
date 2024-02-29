@@ -51,6 +51,30 @@ const Footer = () => {
 
   return (
     <footer className={styles.footerContainer}>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit}
+      >
+        <h2 className={styles.titleMob}>SUBSCRIBE TO GET FREE PROMO & EVENTS NOTIFICATION</h2>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="youremail@gmail.com *"
+          className={styles.emailInput}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <button
+          type="submit"
+          className={styles.submitButton}
+        >
+          Submit
+        </button>
+        { feedBack() }
+      </form>
       <div className={styles.footerContent}>
         <img
           src={logo}
@@ -92,10 +116,10 @@ const Footer = () => {
       <article className={styles.map}>
         <div className={styles.socialPage}>
           <form
-            className={styles.form}
+            className={styles.formDesk}
             onSubmit={handleSubmit}
           >
-            <h2>SUBSCRIBE TO GET FREE PROMO & EVENTS NOTIFCATION</h2>
+            <h2>SUBSCRIBE TO GET FREE PROMO & EVENTS NOTIFICATION</h2>
             <input
               type="email"
               name="email"
@@ -115,6 +139,11 @@ const Footer = () => {
             </button>
             { feedBack() }
           </form>
+          <img
+            src={logo}
+            alt="Brisbane Deep Logo"
+            className={styles.footerLogo}
+          />
           <div className={styles.socialMedia}>
             <h2>CONNECT WITH US</h2>
             <a
