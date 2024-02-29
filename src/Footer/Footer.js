@@ -79,7 +79,7 @@ const Footer = () => {
         <img
           src={logo}
           alt="Brisbane Deep Logo"
-          className={styles.footerLogo}
+          className={styles.footerLogoDesk}
         />
         <small className={styles.footerText}>
           <article className={styles.locationDiv}>
@@ -94,23 +94,25 @@ const Footer = () => {
               Nigeria.
             </p>
           </article>
-          <article className={styles.contact}>
-            <FaPhoneSquareAlt className={styles.icon} />
-            <div className={styles.contactDiv}>
-              <a href="tel:+2348037203086" className={styles.call}>+234 803 720 3086</a>
-              <br />
-              <a href="tel:+2348031391167" className={styles.call}>+234 803 139 1167</a>
-            </div>
-          </article>
-          <article className={styles.emailDiv}>
-            <MdAttachEmail className={styles.icon} />
-            <a
-              href="mailto:info@brisbanehotels.com"
-              className={styles.email}
-            >
-              info@brisbanehotels.com
-            </a>
-          </article>
+          <div className={styles.comboDiv}>
+            <article className={styles.contact}>
+              <FaPhoneSquareAlt className={styles.icon} />
+              <div className={styles.contactDiv}>
+                <a href="tel:+2348037203086" className={styles.call}>+234 803 720 3086</a>
+                <br />
+                <a href="tel:+2348031391167" className={styles.call}>+234 803 139 1167</a>
+              </div>
+            </article>
+            <article className={styles.emailDiv}>
+              <MdAttachEmail className={styles.icon} />
+              <a
+                href="mailto:info@brisbanehotels.com"
+                className={styles.email}
+              >
+                info@brisbanehotels.com
+              </a>
+            </article>
+          </div>
         </small>
       </div>
       <article className={styles.map}>
@@ -145,7 +147,7 @@ const Footer = () => {
             className={styles.footerLogo}
           />
           <div className={styles.socialMedia}>
-            <h2>CONNECT WITH US</h2>
+            <h5>CONNECT WITH US</h5>
             <a
               href="https://www.facebook.com/brisbanehotels"
               target="_blank"
@@ -188,18 +190,6 @@ const Footer = () => {
           &copy;
           {` ${currentYear} `}
           Brisbane Hotel & Suites. All Rights Reserved.
-        </p>
-        <p className={styles.designer}>
-          Designed by
-          {' '}
-          <a
-            href="https://mindprep.tech/"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.designerLink}
-          >
-            MindByte Technologies
-          </a>
         </p>
       </div>
     </footer>

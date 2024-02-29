@@ -54,7 +54,7 @@
 .reviewsContainer {
   background-color: var(--darkBrown);
   color: var(--white);
-  padding: 3.5rem 0.5rem;
+  padding: 0 0.5rem 3rem;
   @extend .relative;
   @extend .flexCol;
   gap: 1rem;
