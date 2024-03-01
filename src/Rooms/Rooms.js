@@ -30,7 +30,7 @@ const Rooms = () => {
   };
 
   return (
-    <section className={styles.roomDiv}>
+    <section className={styles.roomDiv} id="rooms">
       <h2 className={styles.subtitleA}>ROOMS & SUITES</h2>
       <article className={styles.introDiv}>
         <p className={styles.introText}>

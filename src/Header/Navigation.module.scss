@@ -49,7 +49,6 @@
 
 /************/
 
-
 .header {
   z-index: 1000;
   width: 100%;
@@ -57,6 +56,7 @@
   background: linear-gradient(182.26deg, rgba(0, 0, 0, 0.2) 1.89%, rgba(0, 0, 0, 0) 98.11%),
     linear-gradient(0deg, rgba(156, 76, 43, 0.51), rgba(156, 76, 43, 0.51));
   position: fixed;
+  backdrop-filter: blur(2px);
   
   .navBar {
     width: 100%;
@@ -73,11 +73,11 @@
         .navLogo {
           margin-top: 0.30rem;
           width: 50px;
+          cursor: pointer;
         }
       }
 
       .dividerDiv {
-        // width: 100%;
         @extend .flex;
         @extend .alignItemsCenter;
         gap: 2rem;
@@ -90,6 +90,25 @@
           border: none;
           background: radial-gradient(87.18% 736.36% at 10.55% 26.92%, rgba(230, 70, 19, 0.2) 9.71%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
             linear-gradient(0deg, #E7B23F, #E7B23F);
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--white);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+
+        .exitMenu {
+          font-size: 2.5rem;
+          color: var(--lightBrown);
+          transition: all 0.3s ease;
+
+          &:active {
+            transform: scale(0.95);
+          }
         }
       }
     }
@@ -104,6 +123,71 @@
       font-size: 2rem;
       left: 88%;
       color: #E7B23F;
+    }
+
+    .navLinksMob {
+      position: fixed;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(0deg, rgba(232, 179, 64, 0.8), rgba(232, 179, 64, 0.5)),
+        radial-gradient(87.18% 736.36% at 10.55% 26.92%, rgba(230, 70, 19, 0.2) 9.71%, rgba(0, 0, 0, 0) 100%);
+      backdrop-filter: blur(5px);
+
+      .navLister {
+        background-color: var(--darkBrown);
+        width: 60%;
+        height: 100vh;
+
+        .navList {
+          padding: 3rem 1.5rem;
+          list-style-type: none;
+        }
+
+        .logger {
+          @extend .flex;
+          padding-left: 2.25rem;
+          gap: 1rem;
+
+          .button:first-of-type {
+            border-right: 1px solid #E7B23F;
+          }
+
+          .button {
+            border: none;
+            background: var(--lightBrown);
+            padding: 0.5rem 1rem;
+            color: var(--darkBrown);
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: var(--white);
+            }
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+
+          a {
+            display: block;
+            padding: 0;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 0.75rem;
+          color: #fff;
+          font-size: 1.5rem;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #E7B23F;
+          }
+        }
+      }
     }
   }
 }

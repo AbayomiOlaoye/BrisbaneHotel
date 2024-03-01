@@ -7,7 +7,7 @@ import benefits from '../HotelInfo/benefits';
 
 const About = () => {
   return (
-    <section className={styles.aboutContainer}>
+    <section className={styles.aboutContainer} id="about">
       <article className={styles.container}>
         <article className={styles.mobileDiv}>
           <h2 className={styles.subtitle}>HOSPITALITY AT ITS BEST</h2>

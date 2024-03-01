@@ -44,7 +44,7 @@ const LandingPage = () => {
   // };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="home">
       <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
         <button type="button" className={styles.sliderBtn} onClick={() => {}}>

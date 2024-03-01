@@ -79,7 +79,7 @@ const Guests = () => {
   );
 
   return (
-    <section className={styles.reviewsContainer}>
+    <section className={styles.reviewsContainer} id="reviews">
       <h2 className={styles.heading}>WHAT OUR GUESTS SAY</h2>
       <article className={styles.reviewDiv}>
         {windowWidth < 768

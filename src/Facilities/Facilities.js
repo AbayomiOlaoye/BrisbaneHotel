@@ -30,7 +30,7 @@ const Facilities = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="facilities">
       <h2 className={styles.subtitle}>OUR FACILITIES</h2>
       <div className={styles.facilities}>
         {facilities

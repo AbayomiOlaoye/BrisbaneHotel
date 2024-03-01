@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, {
@@ -22,6 +23,8 @@ const Navigation = () => {
       once: true,
     });
   }, []);
+
+  const loggedIn = false;
 
   const [toggle, setToggle] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -85,54 +88,70 @@ const Navigation = () => {
         </div>
         {toggle && (
         <div className={styles.navLinksMob}>
-          <ul className={styles.navList}>
-            <li className={styles.navListItem}>
-              <Link to="/" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Home
-              </Link>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#about" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                About
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Rooms
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Reviews
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#gallery" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Gallery
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#contact" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
-                Contact
-              </a>
-            </li>
-          </ul>
-          <div className={styles.logger}>
-            <button
-              type="button"
-              className={styles.button}
-              // onClick={onClick}
-            >
-              Join
-            </button>
-            <button
-              type="button"
-              className={styles.button}
-              onClick={handleMenuClose}
-            >
-              Log In
-            </button>
-          </div>
+          <article className={styles.navLister}>
+            <ul className={styles.navList}>
+              <li className={styles.navListItem}>
+                <a href="#home" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Home
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#about" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  About
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Rooms
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#reviews" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Reviews
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#facilities" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Gallery
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#contact" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <div className={styles.logger}>
+              {loggedIn === false && (
+                <Link to="/register" className={styles.navPointer}>
+                  <button
+                    type="button"
+                    className={styles.button}
+                  >
+                    Join
+                  </button>
+                </Link>
+              )}
+              {loggedIn ? (
+                <button
+                  type="button"
+                  className={styles.button}
+                  onClick={handleMenuClose}
+                >
+                  Log Out
+                </button>
+              ) : (
+                <Link to="/login" className={styles.navPointer}>
+                  <button
+                    type="button"
+                    className={styles.button}
+                  >
+                    Log In
+                  </button>
+                </Link>
+              )}
+            </div>
+          </article>
         </div>
         )}
         <div className={styles.navLinks}>
@@ -148,17 +167,17 @@ const Navigation = () => {
               </a>
             </li>
             <li className={styles.navListItem}>
-              <a href="#faqs" className={styles.navLinkItem} data-aos="fade-up">
+              <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up">
                 Rooms
               </a>
             </li>
             <li className={styles.navListItem}>
-              <a href="#faqs" className={styles.navLinkItem} data-aos="fade-up">
+              <a href="#reviews" className={styles.navLinkItem} data-aos="fade-up">
                 Reviews
               </a>
             </li>
             <li className={styles.navListItem}>
-              <a href="#faqs" className={styles.navLinkItem} data-aos="fade-up">
+              <a href="#facilities" className={styles.navLinkItem} data-aos="fade-up">
                 Gallery
               </a>
             </li>
