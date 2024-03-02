@@ -2,13 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Register.module.scss';
-import Navigation from '../Header/Navigation';
 import logo from '../images/brisbaneDeep.svg';
 
 const Register = () => {
   return (
     <>
-      <Navigation />
       <section className={styles.container}>
         <article className={styles.title}>
           <img src={logo} alt="logo" className={styles.logo} />

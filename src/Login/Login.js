@@ -1,15 +1,15 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import Navigation from '../Header/Navigation';
+import { Link } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 const Login = () => {
   return (
     <>
-      <Navigation />
       <section className={styles.container}>
+        <div className={styles.overlay} />
         <article className={styles.title}>
-          <p className={styles.subtitle}>Welcome to</p>
+          <p className={styles.intro}>Welcome to</p>
           <h1 className={styles.subtitle}>BRISBANE HOTEL & SUITES</h1>
           <p className={styles.desc}>A place where luxury and privacy becomes your property.</p>
         </article>
@@ -19,7 +19,12 @@ const Login = () => {
           <button type="submit" className={styles.btn}>
             Login
           </button>
+          <p className={styles.link}>
+            Don&apos;t have an account?
+            <Link to="/Register"> Register</Link>
+          </p>
         </form>
+
       </section>
     </>
   );
