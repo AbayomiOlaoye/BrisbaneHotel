@@ -14,6 +14,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import styles from './Navigation.module.scss';
 import menu from '../images/menu.png';
 import brisbaneDeep from '../images/brisbaneDeep.svg';
+import bigLogo from '../images/big_logo.svg';
 
 const Navigation = () => {
   useEffect(() => {
@@ -64,6 +65,7 @@ const Navigation = () => {
               alt="Brisbane logo"
               className={styles.navLogo}
             />
+            <img src={bigLogo} alt="Brisbane logo" className={styles.navLogoDesk} />
           </a>
           <div className={styles.dividerDiv}>
             <button type="button" className={styles.button}>
@@ -153,6 +155,77 @@ const Navigation = () => {
           </article>
         </div>
         )}
+        <div className={styles.navLinksDesk}>
+          <article className={styles.navLister}>
+            <ul className={styles.navList}>
+              <li className={styles.navListItem}>
+                <a href="#home" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Home
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#about" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  About
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Rooms
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#reviews" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Reviews
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#facilities" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Gallery
+                </a>
+              </li>
+              <li className={styles.navListItem}>
+                <a href="#contact" className={styles.navLinkItem} data-aos="fade-up" onClick={handleMenuClose}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <button type="button" className={styles.btn}>
+              <a href="#finder" className={styles.navLinkItem} onClick={handleMenuClose}>
+                Book Now
+              </a>
+            </button>
+            <div className={styles.logger}>
+              {loggedIn === false && (
+                <Link to="/register" className={styles.navPointer}>
+                  <button
+                    type="button"
+                    className={styles.button}
+                  >
+                    Join
+                  </button>
+                </Link>
+              )}
+              {loggedIn ? (
+                <button
+                  type="button"
+                  className={styles.button}
+                  onClick={handleMenuClose}
+                >
+                  Log Out
+                </button>
+              ) : (
+                <Link to="/login" className={styles.navPointer}>
+                  <button
+                    type="button"
+                    className={styles.button}
+                  >
+                    Log In
+                  </button>
+                </Link>
+              )}
+            </div>
+          </article>
+        </div>
         <BsArrowUpCircleFill onClick={scrollToTop} className={styles.scroll} />
       </nav>
 

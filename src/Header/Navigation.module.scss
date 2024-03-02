@@ -120,16 +120,16 @@
           .mobileMenuIcon {
             display: none;
           }
+
+          .button {
+            display: none;
+          }
         }
       }
     }
 
-    .navLinks {
+    .navLinksDesk {
       display: none;
-
-      @media screen and (min-width: 768px) {
-        display: flex;
-     }
     }
 
     .scroll {
@@ -209,6 +209,108 @@
 
           &:active {
             transform: scale(0.95);
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      
+    }
+
+    @media screen and (min-width: 955px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+
+      .navPre {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+      }
+
+      .navLinksDesk {
+        display: flex;
+        
+        .navLister {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          gap: 1rem;
+
+          .navList {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            list-style-type: none;
+
+            .navLinkItem {
+              color: var(--white);
+              text-decoration: none;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: var(--lightBrown);
+              }
+            }
+          }
+
+          .logger {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .button {
+              border: none;
+              background: transparent;
+              // padding: 0.5rem 1rem;
+              color: var(--white);
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: var(--lightBrown);
+              }
+
+              &:active {
+                transform: scale(0.95);
+              }
+
+              a {
+                color: #fff;
+              }
+            }
+
+            .navPointer:nth-of-type(1) {
+              border-right: 1px solid var(--white);
+              padding-right: 1rem;
+            }
+          }
+
+          .btn {
+            width: 135px;
+            height: 46px;
+            padding: 0.5rem;
+            border-radius: 20px;
+            border: none;
+            background: radial-gradient(87.18% 736.36% at 10.55% 26.92%, rgba(230, 70, 19, 0.2) 9.71%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+              linear-gradient(0deg, #E7B23F, #E7B23F);
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: var(--white);
+            }
+  
+            &:active {
+              transform: scale(0.95);
+            }
+  
+            a {
+              color: var(--darkBrown);
+              text-decoration: none;
+            }
           }
         }
       }
