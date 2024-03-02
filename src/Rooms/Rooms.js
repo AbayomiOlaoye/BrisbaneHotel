@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import {
   MdOutlineRestaurant,
@@ -10,10 +12,16 @@ import { SlScreenDesktop } from 'react-icons/sl';
 import { TbCurrencyNaira } from 'react-icons/tb';
 import styles from './Rooms.module.scss';
 import rooms from '../HotelInfo/roomDetails';
+import RoomModal from './RoomModal';
 
 const Rooms = () => {
   const [displayedRooms, setDisplayedRooms] = useState(4);
   const [showAllRooms, setShowAllRooms] = useState(false);
+  const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
+
+  const handleRoomClick = (index) => {
+    setSelectedRoomIndex(index);
+  };
 
   const handleSeeMoreRooms = () => {
     setShowAllRooms(true);
@@ -40,11 +48,11 @@ const Rooms = () => {
       </article>
       <div className={styles.rooms}>
         {
-          rooms.slice(0, showAllRooms ? rooms.length : displayedRooms).map((room) => (
-            <article className={styles.room} key={room.id}>
+          rooms.slice(0, showAllRooms ? rooms.length : displayedRooms).map((room, index) => (
+            <article className={styles.room} key={room.id} onClick={() => handleRoomClick(index)}>
               <img
                 src={room.image[0]}
-                alt="room"
+                alt={`room ${index + 1}`}
                 className={styles.roomImg}
               />
               <div className={styles.roomInfo}>
@@ -112,6 +120,9 @@ const Rooms = () => {
         <button type="button" className={styles.seeMoreBtn} onClick={handleCollapseRooms}>
           See less Rooms
         </button>
+      )}
+      {selectedRoomIndex !== null && (
+        <RoomModal room={rooms[selectedRoomIndex]} onClose={() => setSelectedRoomIndex(null)} />
       )}
     </section>
   );
