@@ -8,9 +8,10 @@ const Register = () => {
   return (
     <>
       <section className={styles.container}>
+        <div className={styles.overlay} />
         <article className={styles.title}>
           <img src={logo} alt="logo" className={styles.logo} />
-          <p className={styles.subtitle}>Welcome to</p>
+          <p className={styles.intro}>Welcome to</p>
           <h1 className={styles.subtitle}>BRISBANE HOTEL & SUITES</h1>
           <p className={styles.desc}>A place where luxury and privacy becomes your property.</p>
         </article>
@@ -21,7 +22,7 @@ const Register = () => {
           <button type="submit" className={styles.btn}>
             Register
           </button>
-          <p className={styles.text}>
+          <p className={styles.link}>
             Already have an account?
             <Link to="/login"> Login</Link>
           </p>
