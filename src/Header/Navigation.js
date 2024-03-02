@@ -58,19 +58,18 @@ const Navigation = () => {
     <header className={`${hasScrolled ? styles.scrolled : ''} ${styles.header}`}>
       <nav className={styles.navBar}>
         <div className={styles.navPre}>
-          <Link to="/" className={styles.navLink}>
+          <a href="#home" className={styles.navLink}>
             <img
               src={brisbaneDeep}
               alt="Brisbane logo"
               className={styles.navLogo}
             />
-          </Link>
+          </a>
           <div className={styles.dividerDiv}>
-            <button
-              type="button"
-              className={styles.button}
-            >
-              Book Now
+            <button type="button" className={styles.button}>
+              <a href="#finder" className={styles.navLinkItem} onClick={handleMenuClose}>
+                Book Now
+              </a>
             </button>
             {
               toggle ? (
@@ -154,61 +153,6 @@ const Navigation = () => {
           </article>
         </div>
         )}
-        <div className={styles.navLinks}>
-          <ul className={styles.navList}>
-            <li className={styles.navListItem}>
-              <Link to="/" className={styles.navLinkItem} data-aos="fade-up">
-                Home
-              </Link>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#about" className={styles.navLinkItem} data-aos="fade-up">
-                About
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#rooms" className={styles.navLinkItem} data-aos="fade-up">
-                Rooms
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#reviews" className={styles.navLinkItem} data-aos="fade-up">
-                Reviews
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#facilities" className={styles.navLinkItem} data-aos="fade-up">
-                Gallery
-              </a>
-            </li>
-            <li className={styles.navListItem}>
-              <a href="#contact" className={styles.navLinkItem} data-aos="fade-up">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <button
-            type="button"
-            className={styles.button}
-          >
-            Book Now
-          </button>
-          <div className={styles.logger}>
-            <button
-              type="button"
-              className={styles.button}
-            >
-              Join
-            </button>
-            <button
-              type="button"
-              className={styles.button}
-              onClick={handleMenuClose}
-            >
-              Log In
-            </button>
-          </div>
-        </div>
         <BsArrowUpCircleFill onClick={scrollToTop} className={styles.scroll} />
       </nav>
 
