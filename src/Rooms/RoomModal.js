@@ -21,6 +21,12 @@ const RoomModal = ({ room, onClose }) => {
   const handleImageClick = (index) => {
     setCurrentImageIndex(index);
   };
+
+  const handleSubmit = (detail) => {
+    const message = `Hello, I would like to ask for a reservation with the following information: Type of Room ${detail.name}`;
+    window.open(`https://wa.me/${2348031391167}?text=${message}`, '_blank');
+  };
+
   return (
     <section className={styles.modalContainer} onClick={onClose}>
       <div className={styles.white}>
@@ -67,6 +73,7 @@ const RoomModal = ({ room, onClose }) => {
           <button
             type="button"
             className={styles.bookBtn}
+            onClick={() => handleSubmit(room)}
           >
             Book Now
           </button>
