@@ -49,7 +49,12 @@ const Rooms = () => {
       <div className={styles.rooms}>
         {
           rooms.slice(0, showAllRooms ? rooms.length : displayedRooms).map((room, index) => (
-            <article className={styles.room} key={room.id} onClick={() => handleRoomClick(index)}>
+            <article
+              title={room.description}
+              className={styles.room}
+              key={room.id}
+              onClick={() => handleRoomClick(index)}
+            >
               <img
                 src={room.image[0]}
                 alt={`room ${index + 1}`}

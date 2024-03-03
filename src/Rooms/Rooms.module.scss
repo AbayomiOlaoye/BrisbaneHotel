@@ -65,7 +65,11 @@
     max-width: 203px;
     padding: 3rem 0.5rem 2rem;
     margin-left: 4.5rem;
-    line-height: 40px
+    line-height: 40px;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   .introDiv {
@@ -74,6 +78,17 @@
 
     .subtitleB {
       display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+        font-size: 4rem;
+        font-family: var(--prompt);
+        max-width: 470px;
+        line-height: 70px;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(103.98deg, #703421 52.09%, rgba(156, 76, 43, 0) 88.37%);
+      }
     }
 
     .introText {
@@ -81,6 +96,16 @@
       max-width: 270px;
       text-align: center;
       margin: 0 auto 1rem;
+
+      @media screen and (min-width: 768px) {
+        text-align: left;
+        font-size: 1.25rem;
+        max-width: 300px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
     }
   }
 
@@ -111,7 +136,6 @@
       .roomImg {
         border-radius: 30px 30px 0 0;
         height: inherit;
-        // max-width: 34;
       }
 
       .roomInfo {
@@ -218,6 +242,12 @@
         }
       }
     }
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem 5%;
+    }
   }
 
   .seeMoreBtn {
@@ -240,6 +270,14 @@
       linear-gradient(0deg, #5F250E, #5F250E);
       box-shadow: 0 2.5166666507720947px 2.5166666507720947px 0 rgba(255, 255, 255, 1);
     }
+  }
+
+  @media  screen and (min-width: 768px) {
+    background-image: url('../images/trans_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 5rem 5%;
   }
 }
 
