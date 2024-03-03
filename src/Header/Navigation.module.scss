@@ -222,15 +222,10 @@
       }
     }
 
-    @media screen and (min-width: 768px) {
-      
-    }
-
     @media screen and (min-width: 955px) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 5%;
 
       .navPre {
         display: flex;
@@ -332,5 +327,9 @@
         }
       }
     }
+  }
+  
+  @media screen and (min-width: 768px) {
+    padding: 0 5%;
   }
 }

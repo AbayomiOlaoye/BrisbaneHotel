@@ -62,10 +62,7 @@ const LandingPage = () => {
       </div>
       <article className={styles.titleDiv}>
         <h1 className={styles.title}>
-          Brisbane
-          <br />
-          {' '}
-          hotel & suites
+          Brisbane hotel & suites
         </h1>
         <p className={styles.heroText}>
           Where luxury meets impeccable hospitality. Indulge in a world of
