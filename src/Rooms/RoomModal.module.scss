@@ -1,0 +1,181 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+/************/
+
+.modalContainer {
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  padding: 1.5rem 1rem;
+  background: rgba(95, 37, 14, 0.9);
+
+  .white {
+    background-color: white;
+    padding-bottom: 1.5rem;
+  }
+
+  .modalImages {
+    @extend .relative;
+    .modalImg {
+      height: 200px;
+      width: 100%;
+    }
+
+    .thumbnail {
+      @extend .flex;
+      @extend .justContentCenter;
+      gap: 0.5rem;
+
+      .tag {
+        @extend .flexCol;
+        // @extend .justContentCenter;
+        // @extend .alignItemsCenter;
+        width: 20%;
+        .liner {
+          width: 20px;
+          background: var(--black);
+        }
+
+        .modalThumb {
+          height: 3rem;
+        }
+      }
+
+      button {
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        background: rgba(95, 37, 14, 0.65);
+        color: rgba(255, 255, 255, 0.61);
+        padding: 1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(95, 37, 14, 0.9);
+          color: white;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .prevButton {
+        top: 30%;
+        left: 0;
+      }
+
+      .nextButton {
+        top: 30%;
+        right: 0;
+      }
+    }
+  }
+
+  .modalInfo {
+    p {
+      font-size: 0.95rem;
+      padding: 0 0.5rem;
+      font-family: var(--averia);
+    }
+
+    .modalTitle {
+      font-size: 1.25rem;
+      font-family: var(--prompt);
+      color: var(--darkBrown);
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    .modalFeatures {
+      text-align: left;
+      font-size: 0.95rem;
+      padding: 0.5rem 2rem;
+      font-family: var(--averia);
+    }
+
+    .bookBtn {
+      position: absolute;
+      top: 75%;
+      left: 70%;
+      border: none;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      background: var(--darkBrown);
+      color: var(--white);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: var(--lightBrown);
+        color: var(--darkBrown);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .exitMenu {
+      position: absolute;
+      top: 4%;
+      left: 87%;
+      color: var(--white);
+      font-size: 1.75rem;
+    }
+  }
+}

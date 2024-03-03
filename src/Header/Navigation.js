@@ -65,6 +65,8 @@ const Navigation = () => {
               alt="Brisbane logo"
               className={styles.navLogo}
             />
+          </a>
+          <a href="#home" className={styles.navLink}>
             <img src={bigLogo} alt="Brisbane logo" className={styles.navLogoDesk} />
           </a>
           <div className={styles.dividerDiv}>
