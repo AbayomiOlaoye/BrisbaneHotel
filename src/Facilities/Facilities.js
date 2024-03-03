@@ -40,8 +40,7 @@ const Facilities = () => {
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>
-                  {facility.id}
-                  /12
+                  {window.innerWidth > 768 ? `${facility.id}` : `${facility.id}/12`}
                 </h4>
                 <h3>{facility.name}</h3>
                 <FaLongArrowAltRight className={styles.arrow} />
