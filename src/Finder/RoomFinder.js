@@ -5,6 +5,7 @@ import Button from '../Component/Button';
 
 const RoomFinder = () => {
   const [formData, setFormData] = useState({
+    category: 'none',
     checkIn: '',
     checkOut: '',
     adults: 1,
@@ -25,7 +26,7 @@ const RoomFinder = () => {
   };
 
   return (
-    <section className={styles.finderContainer}>
+    <section className={styles.finderContainer} id="finder">
       <article className={styles.finderContent}>
         <h2 className={styles.finderTitle}>FIND A ROOM</h2>
         <p className={styles.finderText}>
@@ -35,6 +36,27 @@ const RoomFinder = () => {
       </article>
       <form className={styles.finderForm}>
         <article className={styles.form}>
+          <div className={styles.formGroup}>
+            <label htmlFor="Category" className={styles.formLabel}>
+              Category:
+            </label>
+            <select
+              id="category"
+              name="category"
+              className={`${styles.formInput} ${styles.formSelect}`}
+              value={formData.category}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="none">Select a Room</option>
+              <option value="Standard Room">Standard Room - #20,000</option>
+              <option value="Deluxe Room">Deluxe Room - #30,000</option>
+              <option value="Executive Room">Executive Room - #40,000</option>
+              <option value="Executive Suite">Executive Suite - #50,000</option>
+              <option value="Royal Suite">Royal Suite - #60,000</option>
+              <option value="Presidential Suite">Presidential Suite - #70,000</option>
+            </select>
+          </div>
           <div className={styles.formGroup}>
             <label htmlFor="checkIn" className={styles.formLabel}>
               Check In:

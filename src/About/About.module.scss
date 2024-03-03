@@ -8,21 +8,6 @@
   flex-direction: column;
 }
 
-.flexRow {
-  display: flex;
-  flex-direction: row;
-}
-
-.flexColReverse {
-  display: flex;
-  flex-direction: column-reverse
-}
-
-.flexRowReverse {
-  display: flex;
-  flex-direction: row-reverse
-}
-
 .flex {
   display: flex;
 }
@@ -66,7 +51,8 @@
       .subtitle {
         font-size: 2rem;
         color: var(--brown);
-        max-width: 60%;
+        width: 100%;
+        max-width: 220px;
         padding: 4rem 0.5rem 2rem;
         line-height: 40px;
       }
@@ -83,6 +69,45 @@
 
     .aboutImg {
       display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .mobileDiv {
+        padding-left: 5%;
+
+        .aboutImgMobile {
+          display: none;
+        }
+
+        .subtitle {
+          font-size: 4rem;
+          color: transparent;
+          -webkit-text-stroke: 1px var(--brown);
+          border-color: var(--brown);
+          width: 100%;
+          padding: 4rem 0.5rem 1rem;
+          line-height: 70px;
+        }
+  
+        .heading {
+          text-align: left;
+          font-size: 1.5rem;
+        }
+
+        .text {
+          max-width: 90%;
+        }
+      }
+
+      .aboutImg {
+        display: block;
+        width: 50%;
+        margin: 4rem 0;
+      }
     }
   }
 
@@ -103,7 +128,8 @@
       gap: 0.25rem;
 
       .icon {
-        width: 30%;
+        width: 20%;
+        max-width: 30px;
       }
 
       .benefitText {
@@ -111,7 +137,16 @@
         padding: 0.5rem 0;
         text-align: center;
         font-size: 0.75rem;
+        max-width: 150px;
       }
     }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(6, minmax(60px, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image:unset;
   }
 }

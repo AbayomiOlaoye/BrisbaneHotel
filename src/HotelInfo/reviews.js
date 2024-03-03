@@ -23,7 +23,7 @@ const reviews = [
     name: 'Jim Doe',
     location: 'Onitsha',
     rating: ['&#9733;', '&#9733;', '&#9733;', '&#9733;', '&#9733;'],
-    review: 'Not a bad place to stay. The room was clean and comfortable, and the staff was friendly. However, I was disappointed that the hotel did not offer complimentary breakfast.',
+    review: 'Not a bad place to stay. The room was clean and comfortable, and the staff was friendly. In fact, their complimentary breakfast was so delectable that I look forward to visiting again.',
     image: revOne,
   },
 ];

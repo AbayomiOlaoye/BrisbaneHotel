@@ -8,7 +8,7 @@ import { MdOutlineStars } from 'react-icons/md';
 // import Slider from 'react-slick';
 import mobileBg from '../images/mobile_bg.png';
 import styles from './LandingPage.module.scss';
-import Button from '../Component/Button';
+// import Button from '../Component/Button';
 
 const LandingPage = () => {
   // const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,7 +44,7 @@ const LandingPage = () => {
   // };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="home">
       <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
         <button type="button" className={styles.sliderBtn} onClick={() => {}}>
@@ -62,16 +62,13 @@ const LandingPage = () => {
       </div>
       <article className={styles.titleDiv}>
         <h1 className={styles.title}>
-          Brisbane
-          <br />
-          {' '}
-          hotel & suites
+          Brisbane hotel & suites
         </h1>
         <p className={styles.heroText}>
           Where luxury meets impeccable hospitality. Indulge in a world of
           comfort in the heart of Brisbane. You deserve the best!
         </p>
-        <Button text="Book a Room" />
+        <a href="#rooms" className={styles.button}>Book a Room</a>
       </article>
     </section>
   );

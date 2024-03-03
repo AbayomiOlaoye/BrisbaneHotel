@@ -61,7 +61,8 @@
   .subtitle {
     font-size: 2rem;
     color: var(--lightBrown);
-    max-width: 60%;
+    width: 100%;
+    max-width: 203px;
     padding: 3rem 0 2rem;
     line-height: 40px;
   }
@@ -81,6 +82,7 @@
 
     .fade {
       height: inherit;
+      width: inherit;
 
       .img {
         height: inherit;
@@ -145,7 +147,8 @@
     }
   }
 
-  .seeMoreBtn {
+  .seeMoreBtn,
+  .collapseBtn {
     @extend .none;
   }
 
@@ -153,4 +156,107 @@
     from {opacity: .4}
     to {opacity: 1}
   }
+
+  @media screen and (min-width: 768px) {
+    background-image: unset;
+    background-color: var(--white);
+    padding: 3rem 5%;
+    
+    .subtitle {
+      font-size: 3.5rem;
+      color: var(--brown);
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      line-height: 70px;
+    }
+
+    .facilities {
+      position: static;
+      height: 100%;
+      flex-direction: column;
+  
+      .facility {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+        margin: 2rem auto 0;
+        justify-content: space-around;
+        transition: 0.3s ease;
+        cursor: pointer;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--brown);
+
+        .text {
+          position: static;
+          flex-direction: row;
+          gap: 2rem;
+          top: unset;
+          justify-content: space-between;
+          height: 16%;
+          background: unset;
+          padding: 0.5rem;
+
+          h4,
+          h3 {
+            color: var(--brown);
+          }
+  
+          .pointer {
+            display: none;
+          }
+  
+          .arrow {
+            display: flex;
+            color: var(--brown);
+            font-size: 2rem;
+          }
+        }
+
+        &:hover .img {
+          opacity: 0.4;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+  
+        .img {
+          width: 10%;
+          background: rgba(95, 37, 14, 0.2);
+          transition: 0.3s ease;
+        }
+    }
+
+    .seeMoreBtn,
+    .collapseBtn {
+      display: flex;
+      background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.77) 0%, rgba(230, 70, 19, 0) 100%),
+        linear-gradient(0deg, #5F250E, #5F250E);
+      border: none;
+      border-radius: 30px;
+      color: var(--white);
+      width: 30%;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem auto;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.4) 0%, rgba(230, 70, 19, 0) 100%),
+        linear-gradient(0deg, #5F250E, #5F250E);
+        box-shadow: 0 2.5166666507720947px 2.5166666507720947px 0 rgba(255, 255, 255, 1);
+      }
+
+      &:focus {
+        box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+        background: unset;
+        border: 1px solid #5F250E;
+        color: #5F250E;
+      }
+        }
+      }
 }

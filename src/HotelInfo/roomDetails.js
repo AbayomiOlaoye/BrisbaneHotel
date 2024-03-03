@@ -121,7 +121,7 @@ const rooms = [
   },
   {
     id: 6,
-    name: 'Double Royal Suite',
+    name: 'Presidential Suite',
     info: 'MAX 2 GUESTS/2 BED SPACES',
     price: '80,000',
     description: 'Step into a world of unparalleled luxury and sophistication with our Double Royal Suites. Designed to exceed your expectations, these suites offer a lavish retreat for those seeking the ultimate indulgence.',

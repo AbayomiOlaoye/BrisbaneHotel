@@ -75,7 +75,7 @@
 
   .slidePrev {
     @extend .absolute;
-    top: 82.45%;
+    top: 82%;
     background: #9C4C2B99;
     border-radius: 0 0 0 34px;
   }
@@ -83,15 +83,16 @@
   .slideNext {
     @extend .absolute;
     background: #9C4C2B99;
-    top: 40.8%;
-    left: 86.8%;
+    top: 35.08%;
+    left: 86.5%;
     border-radius: 0 35px 0 0;
   }
 
   .heading {
     font-size: 2rem;
     color: var(--white);
-    max-width: 60%;
+    width: 100%;
+    max-width: 203px;
     padding: 3rem 0 2rem;
     line-height: 40px;
   }
@@ -102,6 +103,8 @@
     box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
     padding: 1rem;
+    max-width: 345px;
+    margin: 0 auto;
     height: 280px;
 
     .reviewContent {
@@ -147,6 +150,7 @@
           text-align: center;
           padding-top: 1rem;
           height: 187px;
+          max-width: 315px;
         }
       }
     }

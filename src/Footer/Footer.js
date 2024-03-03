@@ -50,7 +50,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={styles.footerContainer} id="contact">
       <form
         className={styles.form}
         onSubmit={handleSubmit}
