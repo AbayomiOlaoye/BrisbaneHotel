@@ -136,6 +136,35 @@
       width: 100%;
       font-size: 1.25rem;
     }
+
+    .button {
+      display: block;
+      border: 0;
+      background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.77) 0%, rgba(230, 70, 19, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+        linear-gradient(0deg, #E7B23F, #E7B23F);
+      border-radius: 40px;
+      box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+      height: 3rem;
+      max-width: 280px;
+      text-align: center;
+      width: 60%;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-top: 1rem;
+      padding: 0.5rem;
+      transition: all 0.6s ease;
+    
+      &:hover {
+        background: transparent;
+        border: 1px solid #E7B23F;
+        box-shadow: none;
+        color: #E7B23F;
+      }
+    
+      &:focus {
+        box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+      }
+    }
   }
   
   @media screen and (min-width: 768px) {

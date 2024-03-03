@@ -8,7 +8,7 @@ import { MdOutlineStars } from 'react-icons/md';
 // import Slider from 'react-slick';
 import mobileBg from '../images/mobile_bg.png';
 import styles from './LandingPage.module.scss';
-import Button from '../Component/Button';
+// import Button from '../Component/Button';
 
 const LandingPage = () => {
   // const [currentSlide, setCurrentSlide] = useState(0);
@@ -68,7 +68,7 @@ const LandingPage = () => {
           Where luxury meets impeccable hospitality. Indulge in a world of
           comfort in the heart of Brisbane. You deserve the best!
         </p>
-        <Button text="Book a Room" />
+        <a href="#rooms" className={styles.button}>Book a Room</a>
       </article>
     </section>
   );

@@ -270,6 +270,10 @@
       linear-gradient(0deg, #5F250E, #5F250E);
       box-shadow: 0 2.5166666507720947px 2.5166666507720947px 0 rgba(255, 255, 255, 1);
     }
+
+    @media screen and (min-width: 768px) {
+      width: 30%;
+    }
   }
 
   @media  screen and (min-width: 768px) {
