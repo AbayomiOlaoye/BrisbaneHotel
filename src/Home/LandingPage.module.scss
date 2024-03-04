@@ -1,0 +1,187 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @extend .relative;
+  color: #fff;
+
+  // .slide {
+  //   // position: absolute;
+  //   width: 100%;
+  //   height: 400px;
+  //   background-size: cover;
+  //   background-position: center;
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease;
+  // }
+  .slider {
+    @extend .absolute;
+    top: 40%;
+    left: 90%;
+    z-index: 5;
+    @extend .flexCol;
+    gap: 0.25rem;
+
+    .sliderBtn {
+      background: rgba(231, 178, 63, 0.4);
+      border: none;
+      color: #fff;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+
+      .icon {
+        width: 20px;
+      }
+
+      &:hover {
+        background: rgba(231, 178, 63, 1);
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .bgImg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .date {
+    @extend .absolute;
+    @extend .flex;
+    @extend .alignItemsCenter;
+    top: 30%;
+    left: 63%;
+    border: 0.63px solid rgba(231, 178, 63, 1);
+    border-radius: 25px;
+    font-family: var(--averia);
+    padding: 0.5rem 0.85rem;
+
+    .icon {
+      color: rgba(231, 178, 63, 1);
+      padding-right: 0.15rem;
+      width: 18px;
+      display: block;
+    }
+
+    @media screen and (min-width: 768px) {
+      left: 83%;
+    }
+  }
+
+  .titleDiv {
+    margin: 4rem 0;
+    @extend .absolute;
+    top: 35%;
+    padding: 0 0.5rem;
+    @extend .flexCol;
+    gap: 1rem;
+
+    .title {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      max-width: 350px;
+      width: 90%;
+    }
+
+    .heroText {
+      font-family: var(--averia);
+      max-width: 600px;
+      width: 100%;
+      font-size: 1.25rem;
+    }
+
+    .button {
+      display: block;
+      border: 0;
+      background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.77) 0%, rgba(230, 70, 19, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+        linear-gradient(0deg, #E7B23F, #E7B23F);
+      border-radius: 40px;
+      box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+      height: 3rem;
+      max-width: 280px;
+      text-align: center;
+      width: 60%;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-top: 1rem;
+      padding: 0.5rem;
+      transition: all 0.6s ease;
+    
+      &:hover {
+        background: transparent;
+        border: 1px solid #E7B23F;
+        box-shadow: none;
+        color: #E7B23F;
+      }
+    
+      &:focus {
+        box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+      }
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .titleDiv {
+      top: 30%;
+      padding: 0 5%;
+
+      .title {
+        font-size: 3.5rem;
+        width: 70%;
+        max-width: unset;
+      }
+
+      .heroText {
+        max-width: 500px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
