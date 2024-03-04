@@ -248,6 +248,13 @@
       grid-template-columns: repeat(2, 1fr);
       padding: 2rem 5%;
     }
+
+    @media screen and (min-width: 1056px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 5% 0;
+      row-gap: 2rem;
+    }
   }
 
   .seeMoreBtn {

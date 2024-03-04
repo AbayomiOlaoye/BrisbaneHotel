@@ -22,7 +22,7 @@ const About = () => {
           </h3>
           <p className={styles.text}>
             Your Oasis of Luxury and Relaxation in Anambra. Nestled amidst
-            the breathtaking landscapes of Anambra state, Nigeria, Brisbane
+            the breathtaking landscapes of Anambra state, Nigeria. Brisbane
             stands as a haven of tranquility and indulgence. More than just
             a hotel, we are a gateway to an unforgettable experience, where
             stunning scenery meets exceptional service and luxurious comfort.
