@@ -2,7 +2,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable arrow-body-style */
-import React from 'react';
+import React, { useEffect } from 'react';
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from 'react-icons/hi';
 import { MdOutlineStars } from 'react-icons/md';
 // import Slider from 'react-slick';
@@ -11,6 +14,12 @@ import styles from './LandingPage.module.scss';
 // import Button from '../Component/Button';
 
 const LandingPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    });
+  }, []);
   // const [currentSlide, setCurrentSlide] = useState(0);
   // const slides = [
   //   mobileBg,
@@ -56,15 +65,15 @@ const LandingPage = () => {
       </div>
 
       <div className={styles.overlay} />
-      <div className={styles.date}>
+      <div className={styles.date} data-aos-delay="1000" data-aos-duration="1000" data-aos="zoom-in">
         <MdOutlineStars className={styles.icon} />
         Since 2018
       </div>
       <article className={styles.titleDiv}>
-        <h1 className={styles.title}>
+        <h1 className={styles.title} data-aos="zoom-in">
           Brisbane hotel & suites
         </h1>
-        <p className={styles.heroText}>
+        <p className={styles.heroText} data-aos="fade-left">
           Where luxury meets impeccable hospitality. Indulge in a world of
           comfort in the heart of Brisbane. You deserve the best!
         </p>

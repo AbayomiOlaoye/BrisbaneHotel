@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { animateScroll as scroll } from 'react-scroll';

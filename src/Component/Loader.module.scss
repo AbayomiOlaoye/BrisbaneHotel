@@ -1,0 +1,17 @@
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .logo {
+    width: 40%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .para {
+    font-family: var(--averia);
+    color: var(--brown);
+  }
+}
