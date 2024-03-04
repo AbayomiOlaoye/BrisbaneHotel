@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -5,9 +6,8 @@ import { MdAddLocationAlt, MdAttachEmail } from 'react-icons/md';
 import {
   FaPhoneSquareAlt,
   FaInstagramSquare,
-  FaFacebookSquare,
 } from 'react-icons/fa';
-import { FaSquareXTwitter } from 'react-icons/fa6';
+// import { FaSquareXTwitter } from 'react-icons/fa6';
 import styles from './Footer.module.scss';
 import logo from '../images/brisbaneDeep.svg';
 
@@ -149,28 +149,12 @@ const Footer = () => {
           <div className={styles.socialMedia}>
             <h5>CONNECT WITH US</h5>
             <a
-              href="https://www.facebook.com/brisbanehotels"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.socialLink}
-            >
-              <FaFacebookSquare className={styles.icon} />
-            </a>
-            <a
-              href="https://www.instagram.com/brisbanehotels"
+              href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
               target="_blank"
               rel="noreferrer"
               className={styles.socialLink}
             >
               <FaInstagramSquare className={styles.icon} />
-            </a>
-            <a
-              href="https://www.twitter.com/brisbanehotels"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.socialLink}
-            >
-              <FaSquareXTwitter className={styles.icon} />
             </a>
           </div>
         </div>
@@ -197,3 +181,20 @@ const Footer = () => {
 };
 
 export default Footer;
+
+// <a
+// href="https://www.facebook.com/p/Brisbane-hotel-awada-Anambra-state-100075589281511/?_rdc=1&_rdr"
+// target="_blank"
+// rel="noreferrer"
+// className={styles.socialLink}
+// >
+// <FaFacebookSquare className={styles.icon} />
+// </a>
+// <a
+//               href="#"
+//               target="_blank"
+//               rel="noreferrer"
+//               className={styles.socialLink}
+//             >
+//               <FaSquareXTwitter className={styles.icon} />
+//             </a>

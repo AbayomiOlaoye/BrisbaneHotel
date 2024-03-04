@@ -103,7 +103,7 @@
 
   svg {
     color: rgba(231, 178, 63, 1);
-    width: 36px;
+    font-size: 1.25rem;
   }
 
   .footerContent {
@@ -114,6 +114,7 @@
     .footerText {
       @extend .flex;
       margin-top: 1.5rem;
+      gap: 1rem;
 
       .locationDiv,
       .contact,
@@ -144,6 +145,11 @@
       @extend .flex;
       gap: 1rem;
       margin: 1.5rem 0;
+
+      a {
+        display: block;
+        margin-top: 0.25rem;
+      }
 
       .footerLogo {
         width: 20%;
