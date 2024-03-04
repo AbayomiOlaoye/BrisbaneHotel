@@ -20,7 +20,7 @@ import RoomModal from './RoomModal';
 const Rooms = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
       once: true,
       easing: 'ease-in',
     });
@@ -74,7 +74,7 @@ const Rooms = () => {
                 data-aos="zoom-in"
                 className={styles.roomImg}
               />
-              <div className={styles.roomInfo}>
+              <div className={styles.roomInfo} data-aos="zoom-out">
                 <div className={styles.desc}>
                   <h4 className={styles.roomName}>{room.info}</h4>
                   {room.name === 'Standard Room' ? <FaBed /> : <MdBed />}
