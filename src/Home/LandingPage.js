@@ -58,7 +58,7 @@ const LandingPage = () => {
       <div className={styles.overlay} />
       <div className={styles.date}>
         <MdOutlineStars className={styles.icon} />
-        Since 2006
+        Since 2018
       </div>
       <article className={styles.titleDiv}>
         <h1 className={styles.title}>
