@@ -1,9 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from './RoomFinder.module.scss';
 import Button from '../Component/Button';
 
 const RoomFinder = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+      easing: 'ease-in',
+    });
+  }, []);
+
   const [formData, setFormData] = useState({
     category: 'none',
     checkIn: '',
@@ -26,15 +36,15 @@ const RoomFinder = () => {
   };
 
   return (
-    <section className={styles.finderContainer} id="finder">
+    <section className={styles.finderContainer} id="finder" style={{ overflow: 'hidden' }}>
       <article className={styles.finderContent}>
         <h2 className={styles.finderTitle}>FIND A ROOM</h2>
-        <p className={styles.finderText}>
+        <p className={styles.finderText} data-aos="fade-left">
           Not sure what you want? Check availability now and secure your dream
           getaway in the heart of Brisbane Hotel & Suites with just a click.
         </p>
       </article>
-      <form className={styles.finderForm}>
+      <form className={styles.finderForm} data-aos="fade-right">
         <article className={styles.form}>
           <div className={styles.formGroup}>
             <label htmlFor="Category" className={styles.formLabel}>

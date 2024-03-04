@@ -16,7 +16,7 @@ import styles from './LandingPage.module.scss';
 const LandingPage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 500,
+      duration: 600,
       once: true,
     });
   }, []);
@@ -53,7 +53,7 @@ const LandingPage = () => {
   // };
 
   return (
-    <section className={styles.container} id="home">
+    <section className={styles.container} id="home" style={{ overflow: 'hidden' }}>
       <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
         <button type="button" className={styles.sliderBtn} onClick={() => {}}>
@@ -70,7 +70,7 @@ const LandingPage = () => {
         Since 2018
       </div>
       <article className={styles.titleDiv}>
-        <h1 className={styles.title} data-aos="zoom-in">
+        <h1 className={styles.title} data-aos="zoom-out">
           Brisbane hotel & suites
         </h1>
         <p className={styles.heroText} data-aos="fade-left">

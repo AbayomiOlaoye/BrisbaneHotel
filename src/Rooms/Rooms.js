@@ -1,7 +1,9 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {
   MdOutlineRestaurant,
   MdBed,
@@ -16,6 +18,14 @@ import rooms from '../HotelInfo/roomDetails';
 import RoomModal from './RoomModal';
 
 const Rooms = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+      once: true,
+      easing: 'ease-in',
+    });
+  }, []);
+
   const [displayedRooms, setDisplayedRooms] = useState(4);
   const [showAllRooms, setShowAllRooms] = useState(false);
   const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
@@ -40,15 +50,15 @@ const Rooms = () => {
   };
 
   return (
-    <section className={styles.roomDiv} id="rooms">
+    <section className={styles.roomDiv} id="rooms" style={{ overflow: 'hidden' }}>
       <h2 className={styles.subtitleA}>ROOMS & SUITES</h2>
       <article className={styles.introDiv}>
-        <p className={styles.introText}>
+        <p className={styles.introText} data-aos="fade-up">
           All room decoration were made with ecological certified and safe materials.
         </p>
         <h2 className={styles.subtitleB}>ROOMS & SUITES</h2>
       </article>
-      <div className={styles.rooms}>
+      <div className={styles.rooms} data-aos="fade-up">
         {
           rooms.slice(0, showAllRooms ? rooms.length : displayedRooms).map((room, index) => (
             <article
@@ -60,6 +70,8 @@ const Rooms = () => {
               <img
                 src={room.image[0]}
                 alt={`room ${index + 1}`}
+                data-aos-duration="400"
+                data-aos="zoom-in"
                 className={styles.roomImg}
               />
               <div className={styles.roomInfo}>
@@ -106,6 +118,7 @@ const Rooms = () => {
                     </h3>
                     <button
                       type="button"
+                      data-aos="zoom-out"
                       className={styles.bookBtn}
                       onClick={() => handleSubmit(room, event)}
                     >

@@ -1,12 +1,22 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import styles from './Guests.module.scss';
 import reviews from '../HotelInfo/reviews';
 // import logo from '../images/brisbaneDeep.svg';
 
 const Guests = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in',
+    });
+  }, []);
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -17,7 +27,7 @@ const Guests = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 3000);
+    }, 6000);
 
     window.addEventListener('resize', handleResize);
 
@@ -50,6 +60,7 @@ const Guests = () => {
               {review.rating.map((star) => (
                 <span
                   key={star.id}
+                  data-aos="zoom-in"
                   className={styles.star}
                   dangerouslySetInnerHTML={{ __html: star }}
                 />

@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import styles from './Facilities.module.scss';
 import facilities from '../HotelInfo/facilities';
 
 const Facilities = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in',
+    });
+  }, []);
+
   const [showAllFacilities, setShowAllFacilities] = useState(false);
   const [currentFacilityIndex, setCurrentFacilityIndex] = useState(0);
 
@@ -30,13 +40,13 @@ const Facilities = () => {
   };
 
   return (
-    <section className={styles.container} id="facilities">
+    <section className={styles.container} id="facilities" style={{ overflow: 'hidden' }}>
       <h2 className={styles.subtitle}>OUR FACILITIES</h2>
       <div className={styles.facilities}>
         {facilities
           .slice(0, showAllFacilities ? facilities.length : currentFacilityIndex + 1)
           .map((facility, index) => (
-            <article key={facility.id} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`}>
+            <article key={facility.id} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>
