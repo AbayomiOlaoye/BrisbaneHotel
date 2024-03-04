@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
@@ -32,7 +33,8 @@ const Rooms = () => {
     setDisplayedRooms(4);
   };
 
-  const handleSubmit = (detail) => {
+  const handleSubmit = (detail, event) => {
+    event.stopPropagation();
     const message = `Hello, I would like to ask for a reservation with the following information: Type of Room ${detail.name}`;
     window.open(`https://wa.me/${2348031391167}?text=${message}`, '_blank');
   };
@@ -105,7 +107,7 @@ const Rooms = () => {
                     <button
                       type="button"
                       className={styles.bookBtn}
-                      onClick={() => handleSubmit(room)}
+                      onClick={() => handleSubmit(room, event)}
                     >
                       Book Now
                     </button>
