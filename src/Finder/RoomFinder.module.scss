@@ -1,0 +1,155 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.none {
+  display: none;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.finderContainer {
+  background-image: url('../images/trans_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem 0.5rem;
+
+  .finderContent {
+    text-align: center;
+
+    .finderTitle {
+      font-size: 2rem;
+      color: var(--darkBrown);
+      line-height: 40px;
+    }
+
+    .finderText {
+      padding: 1rem 0 2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  .finderForm {
+    @extend .flexCol;
+    @extend .alignItemsCenter;
+    gap: 1rem;
+
+    .form {
+      @extend .flexCol;
+      @extend .alignItemsCenter;
+      gap: 0.5rem;
+
+      .formGroup {
+        @extend .flex;
+        gap: 0.25rem;
+        width: 100%;
+        @extend .alignItemsCenter;
+
+        .formLabel {
+          display: block;
+          width: 45%;
+
+        }
+
+        .formInput {
+          width: 100%;
+          padding: 0.5rem 1rem;
+          border: 1px solid var(--brown);
+          outline: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          background: #9C4C2B24;
+        }
+
+        .formSelect {
+          appearance: none;
+          background-color: transparent;
+          width: 100%;
+          // padding: 0.5rem 1rem;
+          border: 1px solid var(--brown);
+          border-radius: 5px;
+          font-size: 1rem;
+          background: #9C4C2B24;
+        }
+
+        .formInput:focus {
+          background-color: var(--lightBrown);
+        }
+
+        .formSelect option {
+          color: var(--white);
+          background-color: var(--darkBrown);
+        }
+      }
+    }
+  }
+
+  button {
+    background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.77) 0%, rgba(230, 70, 19, 0) 100%),
+      linear-gradient(0deg, #5F250E, #5F250E);
+    border: none;
+    border-radius: 30px;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    transition: all 0.6s ease;
+
+    &:hover {
+      background: radial-gradient(337.82% 613.48% at 40.44% -237.82%, rgba(230, 70, 19, 0.4) 0%, rgba(230, 70, 19, 0) 100%),
+      linear-gradient(0deg, #5F250E, #5F250E);
+      border: unset;
+      color: white;
+      box-shadow: 0 2.5166666507720947px 2.5166666507720947px 0 rgba(255, 255, 255, 1);
+    }
+
+    &:focus {
+      box-shadow: 0 0.5625px 4.5625px 0 rgba(255, 255, 255, 1);
+      background: unset;
+      border: 1px solid #5F250E;
+      color: #5F250E;
+    }
+  }
+}

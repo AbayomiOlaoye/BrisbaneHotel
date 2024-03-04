@@ -1,0 +1,152 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.aboutContainer {
+  background-image: url('../images/brand_bg.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  .container {
+    background-image: url('../images/trans_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+
+    .mobileDiv {
+      @extend .flexCol;
+      @extend .justContentCenter;
+      padding: 0 0.5rem 3rem;
+
+      .subtitle {
+        font-size: 2rem;
+        color: var(--brown);
+        width: 100%;
+        max-width: 220px;
+        padding: 4rem 0.5rem 2rem;
+        line-height: 40px;
+      }
+
+      .heading {
+        font-family: var(--averia);
+        color: var(--brown);
+        padding: 1.5rem 0 0.75rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+    }
+
+    .aboutImg {
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .mobileDiv {
+        padding-left: 5%;
+
+        .aboutImgMobile {
+          display: none;
+        }
+
+        .subtitle {
+          font-size: 4rem;
+          color: transparent;
+          -webkit-text-stroke: 1px var(--brown);
+          border-color: var(--brown);
+          width: 100%;
+          padding: 4rem 0.5rem 1rem;
+          line-height: 70px;
+        }
+  
+        .heading {
+          text-align: left;
+          font-size: 1.5rem;
+        }
+
+        .text {
+          max-width: 90%;
+        }
+      }
+
+      .aboutImg {
+        display: block;
+        width: 50%;
+        margin: 4rem 0;
+      }
+    }
+  }
+
+  .benefits {
+    background-image: url('../images/doodle.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    padding: 3rem 0.5rem;
+    margin: 0 auto;
+
+    .benefitDiv {
+      @extend .flexCol;
+      @extend .alignItemsCenter;
+      @extend .justContentCenter;
+      padding: 1rem 0.5rem;
+      gap: 0.25rem;
+
+      .icon {
+        width: 20%;
+        max-width: 30px;
+      }
+
+      .benefitText {
+        color: var(--white);
+        padding: 0.5rem 0;
+        text-align: center;
+        font-size: 0.75rem;
+        max-width: 150px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(6, minmax(60px, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image:unset;
+  }
+}

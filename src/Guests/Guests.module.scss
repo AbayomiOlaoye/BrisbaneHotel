@@ -1,0 +1,163 @@
+/* Declaring some common styles*/
+.auto {
+  margin: 0 auto;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.none {
+  display: none;
+}
+
+.flexColReverse {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.justContentCenter {
+  justify-content: center;
+}
+
+.justContentSpaceBtw {
+  justify-content: space-between;
+}
+
+.reviewsContainer {
+  background-color: var(--darkBrown);
+  color: var(--white);
+  padding: 0 0.5rem 3rem;
+  @extend .relative;
+  @extend .flexCol;
+  gap: 1rem;
+
+  button {
+    background-color: var(--lightBrown);
+    color: var(--white);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.6s ease;
+
+    &:hover {
+      background-color: var(--darkBrown);
+    }
+  }
+
+  .slidePrev {
+    @extend .absolute;
+    top: 82%;
+    background: #9C4C2B99;
+    border-radius: 0 0 0 34px;
+  }
+
+  .slideNext {
+    @extend .absolute;
+    background: #9C4C2B99;
+    top: 35.08%;
+    left: 86.5%;
+    border-radius: 0 35px 0 0;
+  }
+
+  .heading {
+    font-size: 2rem;
+    color: var(--white);
+    width: 100%;
+    max-width: 203px;
+    padding: 3rem 0 2rem;
+    line-height: 40px;
+  }
+
+  .reviewDiv {
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding: 1rem;
+    max-width: 345px;
+    margin: 0 auto;
+    height: 280px;
+
+    .reviewContent {
+      @extend .relative;
+      animation-name: fade;
+      animation-duration: 0.3s;
+
+      .reviewImage {
+        @extend .absolute;
+        top: -50%;
+        left: 0;
+        width: 25%;
+      }
+
+      .reviewInfo {
+        @extend .relative;
+
+        .divider {
+          @extend .absolute;
+          left: 30%;
+          top: -35%;
+
+          .spanner {
+            border-bottom: 3px solid var(--darkBrown);
+            width: 25%;
+          }
+
+          .location {
+            font-style: italic;
+            font-size: 0.75rem;
+            padding-top: 0.25rem;
+          }
+
+          .reviewRating{
+            color: var(--lightBrown);
+            margin-top: 0.15rem;
+          }
+        }
+
+        .reviewText {
+          margin-top: 3.5rem;
+          font-family: var(--averia);
+          text-align: center;
+          padding-top: 1rem;
+          height: 187px;
+          max-width: 315px;
+        }
+      }
+    }
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+}

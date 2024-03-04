@@ -1,10 +1,11 @@
 import './App.css';
+import Layout from './Router/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Brisbane Hotel & Suites</h1>
-    </div>
+    <>
+      <Layout />
+    </>
   );
 }
 
