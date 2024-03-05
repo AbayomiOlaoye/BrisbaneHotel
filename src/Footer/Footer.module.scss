@@ -56,6 +56,10 @@
   color: var(--white);
   padding: 2rem 0.5rem 1rem;
 
+  @media screen and (min-width: 768px) {
+    display: none;  
+  }
+
   .form {
     @extend .relative;
     @extend .flexCol;
@@ -75,7 +79,7 @@
       border: none;
       padding: 0.5rem;
       border-radius: 15px;
-      left: 70%;
+      left: 69%;
       top: 55%;
       transition: all 0.6s ease;
 
@@ -106,15 +110,22 @@
     font-size: 1.25rem;
   }
 
+  .footerLogoDesk {
+    display: none;
+  }
+
   .footerContent {
-    .footerLogoDesk {
-      @extend .none;
-    }
+    display: flex;
 
     .footerText {
       @extend .flex;
       margin-top: 1.5rem;
       gap: 1rem;
+
+      .icon {
+        color: rgba(231, 178, 63, 1);
+        font-size: 1.25rem;
+      }
 
       .locationDiv,
       .contact,
@@ -157,6 +168,139 @@
       height: 200px;
       border: none;
       margin: 1rem 0 2rem;
+    }
+  }
+
+  .footerBottom {
+    font-size: 0.75rem;
+    text-align: center;
+    padding-top: 1rem;
+    color: var(--lightBrown);
+
+    a {
+      color: var(--white);
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .footerDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footerDesktop {
+    background: #9C4C2B;
+    color: var(--white);
+    padding: 3rem 5% 2rem;
+  
+    a {
+      font-size: 14px;
+      color: #fff;
+    }
+  
+    h2 {
+      font-size: 0.8rem;
+      color: #fff;
+    }
+
+    .footerContent {
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid #fff,;
+      padding-bottom: 2rem;
+  
+      .footerText {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 13px;
+  
+        .locationDiv,
+        .contact,
+        .emailDiv {
+          display: flex;
+          gap: 0.35rem;
+  
+          a {
+            font-size: 14px;
+            color: #fff;
+          }
+        }
+  
+        .emailDiv {
+          margin-top: 0.5rem;
+        }
+      }
+  
+      .footerLogoDesk {
+        width: 10%;
+        align-self: flex-start;
+      }
+  
+      .map {
+        display: flex;
+        gap: 1rem;
+  
+        .mapIframe {
+          width: 100%;
+          border: none;
+        }
+
+        .socialPage {
+          position: relative;
+  
+          .formDesk {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+  
+            .separator {
+              display: flex;
+              gap: 0.5rem;
+              flex-wrap: wrap;
+            }
+          }
+  
+          .socialMedia {
+            padding-top: 1rem;
+          }
+  
+          .submitButton {
+            background-color: var(--lightBrown);
+            border: none;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            border-radius: 15px;
+            transition: all 0.6s ease;
+      
+            &:hover {
+              color: var(--white);
+              background-color: #9C4C2B;
+            }
+          }
+  
+          .emailInput {
+            background: #E7B23F54;
+            border: none;
+            // display: block;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 0.85rem;
+          }
+      
+          input[type="email"]::placeholder {
+            color: #E7B23F;
+          }
+        }
+      }
+    }
+    .icon {
+      color: rgba(231, 178, 63, 1);
+      font-size: 1.25rem;
     }
   }
 
