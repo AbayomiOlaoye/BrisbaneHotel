@@ -11,7 +11,7 @@ import reviews from '../HotelInfo/reviews';
 const Guests = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,
       once: true,
       easing: 'ease-in',
     });
@@ -27,7 +27,7 @@ const Guests = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 6000);
+    }, 10000);
 
     window.addEventListener('resize', handleResize);
 
@@ -37,9 +37,9 @@ const Guests = () => {
     };
   }, []);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
+  // const handleNext = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  // };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
@@ -70,22 +70,43 @@ const Guests = () => {
           <p className={styles.reviewText}>{review.review}</p>
         </div>
       </div>
+      <div className={styles.reviewContentB} key={review.id}>
+        <div className={styles.reviewInfo}>
+          <img src={review.image} alt="review" className={styles.reviewImage} />
+          <article className={styles.divider}>
+            <h4 className={styles.reviewName}>{review.name}</h4>
+            <div className={styles.spanner} />
+            <p className={styles.location}>
+              {review.location}
+            </p>
+            <p className={styles.reviewRating}>
+              {review.rating.map((star) => (
+                <span
+                  key={star.id}
+                  data-aos="zoom-in"
+                  className={styles.star}
+                  dangerouslySetInnerHTML={{ __html: star }}
+                />
+              ))}
+            </p>
+          </article>
+        </div>
+        <p className={styles.reviewText}>{review.review}</p>
+      </div>
     </>
   );
 
+  useEffect(() => {
+    AOS.refresh();
+  }, [currentIndex]);
+
   const renderSlider = () => (
     <div className={styles.slider}>
-      <button type="button" className={styles.arrowLeft} onClick={handlePrev}>
-        &#10094;
-      </button>
       {reviews.map((review, index) => (
         <div key={review.id} style={{ display: index === currentIndex ? 'block' : 'none' }}>
           {renderReviewCard(review)}
         </div>
       ))}
-      <button type="button" className={styles.arrowRight} onClick={handleNext}>
-        &#10095;
-      </button>
     </div>
   );
 
@@ -97,7 +118,6 @@ const Guests = () => {
           ? renderReviewCard(reviews[currentIndex])
           : (
             <>
-              {renderReviewCard(reviews[currentIndex])}
               {renderReviewCard(reviews[(currentIndex + 1) % reviews.length])}
             </>
           )}

@@ -107,6 +107,10 @@
     margin: 0 auto;
     height: 280px;
 
+    .reviewContentB {
+      @extend .none;
+    }
+
     .reviewContent {
       @extend .relative;
       animation-name: fade;
@@ -153,6 +157,114 @@
           max-width: 315px;
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background: url(../images/guest_bg.png) no-repeat center center/cover;
+    padding: 2.5rem 5% 5rem;
+    gap: 2rem;
+  
+    button {
+      background-color: var(--lightBrown);
+      color: var(--white);
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.6s ease;
+  
+      &:hover {
+        background-color: var(--darkBrown);
+      }
+    }
+  
+    .slidePrev {
+      @extend .absolute;
+      top: 75%;
+      left: 2.7%;
+      background: var(--lightBrown);
+      border-radius: 0;
+    }
+  
+    .slideNext {
+      @extend .absolute;
+      background: var(--lightBrown);
+      top: 55%;
+      left: 93%;
+      border-radius: 0;
+    }
+  
+    .heading {
+      font-size: 3.5rem;
+      max-width: 400px;
+      line-height: 60px;
+    }
+  
+    .reviewDiv {
+      background-color: unset;
+      border-radius: unset;
+      padding: unset;
+      box-shadow: unset;
+      min-width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 2rem;
+      height: unset;
+  
+      .reviewContent {
+        display: none;
+      }
+
+      .reviewContentB {
+        display: block;
+        height: 250px;
+        background-color: var(--white);
+        border-radius: 30px;
+        padding: 1.5rem;
+
+        .reviewInfo {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .reviewImage {
+            width: 20%;
+          }
+
+          .divider {
+            .spanner {
+              border-bottom: 3px solid var(--darkBrown);
+              width: 25%;
+            }
+
+            .location {
+              font-style: italic;
+              font-size: 0.85rem;
+              padding-top: 0.25rem;
+              font-family: var(--averia);
+            }
+  
+            .reviewRating{
+              color: var(--lightBrown);
+              margin-top: 0.15rem;
+            }
+          }
+        }
+
+        .reviewText {
+          text-align: center;
+          padding-top: 1rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+    
+    .prev,
+    .next {
+      padding-top: 0.25rem;
     }
   }
 

@@ -132,8 +132,7 @@
 
     .heroText {
       font-family: var(--averia);
-      max-width: 600px;
-      width: 100%;
+      max-width: 325px;
       font-size: 1.25rem;
     }
 
@@ -179,8 +178,8 @@
       }
 
       .heroText {
-        max-width: 60%;
         font-size: 2rem;
+        max-width: 70%;
       }
     }
   }
