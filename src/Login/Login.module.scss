@@ -147,5 +147,10 @@
         }
       }
     }
+
+    @media screen and (min-width: 768px) {
+      width: 40%;
+      margin: 0 auto;
+    }
   }
 }
