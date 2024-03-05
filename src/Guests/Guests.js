@@ -144,9 +144,7 @@ const Guests = () => {
                   </Card.Text>
                 </Card.Body>
               </Card.Body>
-              <Card.Body>
-                <Card.Text className={styles.reviewText}>{review.review}</Card.Text>
-              </Card.Body>
+              <Card.Text className={styles.reviewText}>{review.review}</Card.Text>
             </Card>
           ))}
         </Carousel>
