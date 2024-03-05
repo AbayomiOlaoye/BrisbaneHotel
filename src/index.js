@@ -21,7 +21,7 @@ if (window.innerWidth < 768) {
         <App />
       </React.StrictMode>,
     );
-  }, 5000);
+  }, 3000);
 } else {
   root.render(
     <React.StrictMode>
