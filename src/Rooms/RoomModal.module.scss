@@ -57,18 +57,21 @@
   transform: translate(-50%, -50%);
   height: 100vh;
   width: 100vw;
-  padding: 1.5rem 1rem;
   background: rgba(95, 37, 14, 0.9);
-  overflow: scroll;
+  backdrop-filter: blur(5px);
+  overflow: auto;
 
   .white {
     background-color: white;
     padding-bottom: 1.5rem;
-    // height: 90vh;
+    width: 90vw;
+    margin: 2rem auto;
+    height: 90vh;
   }
 
   .modalImages {
     @extend .relative;
+
     .modalImg {
       height: 250px;
       width: 100%;
@@ -78,20 +81,20 @@
       @extend .flex;
       @extend .justContentCenter;
       gap: 0.5rem;
+      height: 2rem;
 
       .tag {
         @extend .flexCol;
-        // @extend .justContentCenter;
-        // @extend .alignItemsCenter;
+
         width: 10%;
         .liner {
           width: 20px;
           background: var(--black);
         }
 
-        // .modalThumb {
-        //   height: 3rem;
-        // }
+        .modalThumb {
+          height: 2rem;
+        }
       }
 
       button {
@@ -127,13 +130,13 @@
 
   .modalInfo {
     p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       padding: 0 0.5rem;
       font-family: var(--averia);
     }
 
     .modalTitle {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-family: var(--prompt);
       color: var(--darkBrown);
       font-weight: 600;
@@ -142,14 +145,14 @@
 
     .modalFeatures {
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       padding: 0.5rem 2rem;
       font-family: var(--averia);
     }
 
     .bookBtn {
       position: absolute;
-      top: 85%;
+      top: 70%;
       left: 70%;
       border: none;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -170,14 +173,34 @@
       &:active {
         transform: scale(0.95);
       }
+
+      @media screen and (min-width: 768px) {
+        left: 65%;
+      }
     }
 
     .exitMenu {
       position: absolute;
-      top: 4%;
+      top: 5%;
       left: 87%;
+      cursor: pointer;
       color: var(--white);
       font-size: 1.75rem;
+
+      @media screen and (min-width: 768px) {
+        left: 80%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .white {
+      width: 50vw;
+    }
+
+    .modalDesc {
+      max-width: 80%;
+      margin: 0 auto;
     }
   }
 }

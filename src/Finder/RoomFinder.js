@@ -8,7 +8,7 @@ import Button from '../Component/Button';
 const RoomFinder = () => {
   useEffect(() => {
     AOS.init({
-      duration: 500,
+      duration: 400,
       once: true,
       easing: 'ease-in',
     });

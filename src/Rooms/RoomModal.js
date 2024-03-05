@@ -65,7 +65,7 @@ const RoomModal = ({ room, onClose }) => {
             ))}
           </ul>
           <h3 className={styles.modalTitle}>
-            <span className={styles.price}>Price: </span>
+            <span className={styles.price}>Price: #</span>
             {room.price}
           </h3>
           <p className={styles.modalText}>Let’s Reserve a Space For You</p>

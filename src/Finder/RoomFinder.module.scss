@@ -152,4 +152,43 @@
       color: #5F250E;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 4rem 5%;
+    display: flex;
+    justify-content: space-between;
+
+    .finderContent {
+      text-align: left;
+      width: 55%;
+  
+      .finderTitle {
+        font-size: 4rem;
+        width: 50%;
+        color: var(--brown);
+        line-height: 70px;
+      }
+  
+      .finderText {
+        padding: 2rem 0 2rem;
+        margin: 0;
+      }
+    }
+
+    .finderForm {
+
+      .form {
+        .formGroup {
+          .formLabel {
+            width: 30%;
+          }
+
+          .formLabel {
+            color: var(--darkBrown);
+          }
+        }
+      }
+    }
+    
+  }
 }

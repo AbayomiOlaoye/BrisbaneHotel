@@ -1,27 +1,30 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+// import { enhance } from '@cloudinary/url-gen/actions/effect';
 import styles from './About.module.scss';
-import mobileBg from '../images/about.png';
+// import mobileBg from '../images/about.png';
 import aboutBg from '../images/desk_about.png';
 import benefits from '../HotelInfo/benefits';
+
+// new CloudinaryImage('../images/about.png').effect(enhance());
 
 const About = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 600,
       once: true,
       easing: 'ease-in',
     });
   }, []);
 
   return (
-    <section className={styles.aboutContainer} id="about" data-aos-duration="600" data-aos="fade-up" style={{ overflow: 'hidden' }}>
+    <section className={styles.aboutContainer} id="about" data-aos="fade-up" style={{ overflow: 'hidden' }}>
       <article className={styles.container}>
         <article className={styles.mobileDiv}>
           <h2 className={styles.subtitle}>HOSPITALITY AT ITS BEST</h2>
           <img
-            src={mobileBg}
+            src="https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709651217/about_sn64n3.png"
             data-aos="zoom-in"
             alt="nice views at Brisbane Hotel & Suites"
             className={styles.aboutImgMobile}

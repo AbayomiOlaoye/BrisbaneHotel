@@ -98,61 +98,176 @@
   }
 
   .reviewDiv {
-    background-color: var(--white);
-    color: var(--black);
-    box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
-    padding: 1rem;
-    max-width: 345px;
-    margin: 0 auto;
-    height: 280px;
+    // background-color: var(--white);
 
-    .reviewContent {
+    .reviewCard {
+      background-color: var(--white);
       @extend .relative;
-      animation-name: fade;
-      animation-duration: 0.3s;
-
-      .reviewImage {
-        @extend .absolute;
-        top: -50%;
-        left: 0;
-        width: 25%;
-      }
+      color: var(--black);
+      box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
+      border-radius: 40px;
+      padding: 1rem;
+      max-width: 345px;
+      margin: 0 auto;
+      height: 300px;
 
       .reviewInfo {
-        @extend .relative;
+        display: flex;
+        gap: 1rem;
 
-        .divider {
-          @extend .absolute;
-          left: 30%;
-          top: -35%;
+        .reviewImage {
+          width: 22%;
+        }
 
-          .spanner {
-            border-bottom: 3px solid var(--darkBrown);
-            width: 25%;
+        .reviewName {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+
+        .location  {
+          font-style: italic;
+          font-family: var(--averia);
+        }
+
+        .star {
+          color: var(--lightBrown);
+        }
+
+        .spanner {
+          background-color: var(--darkBrown);
+          height: 5px;
+          width: 25%;
+        }
+      }
+
+      .reviewText {
+        font-family: var(--averia);
+        text-align: center;
+        padding-top: 0.5rem;
+        font-size: 0.75px;
+        max-width: 315px;
+      }
+
+      button {
+        background: transparent;
+      }
+
+      @media screen and (min-width: 768px) {
+        height: 280px;
+        max-width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background: url(../images/guest_bg.png) no-repeat center center/cover;
+    padding: 2.5rem 5% 5rem;
+    gap: 2rem;
+  
+    button {
+      background-color: var(--lightBrown);
+      color: var(--white);
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.6s ease;
+  
+      &:hover {
+        background-color: var(--darkBrown);
+      }
+    }
+  
+    .slidePrev {
+      @extend .absolute;
+      top: 75%;
+      left: 2.7%;
+      background: var(--lightBrown);
+      border-radius: 0;
+    }
+  
+    .slideNext {
+      @extend .absolute;
+      background: var(--lightBrown);
+      top: 55%;
+      left: 93%;
+      border-radius: 0;
+    }
+  
+    .heading {
+      font-size: 3.5rem;
+      max-width: 400px;
+      line-height: 60px;
+    }
+  
+    .reviewDiv {
+      background-color: unset;
+      border-radius: unset;
+      padding: unset;
+      box-shadow: unset;
+      min-width: 100%;
+      margin: 0;
+      // display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 2rem;
+      height: 320px;
+  
+      .reviewContent {
+        display: none;
+      }
+
+      .reviewContentB {
+        display: block;
+        height: 250px;
+        background-color: var(--white);
+        border-radius: 30px;
+        padding: 1.5rem;
+
+        .reviewInfo {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .reviewImage {
+            width: 20%;
           }
 
-          .location {
-            font-style: italic;
-            font-size: 0.75rem;
-            padding-top: 0.25rem;
-          }
+          .divider {
+            .spanner {
+              border-bottom: 3px solid var(--darkBrown);
+              width: 25%;
+            }
 
-          .reviewRating{
-            color: var(--lightBrown);
-            margin-top: 0.15rem;
+            .location {
+              font-style: italic;
+              font-size: 0.85rem;
+              padding-top: 0.25rem;
+              font-family: var(--averia);
+            }
+  
+            .reviewRating{
+              color: var(--lightBrown);
+              margin-top: 0.15rem;
+            }
           }
         }
 
         .reviewText {
-          margin-top: 3.5rem;
-          font-family: var(--averia);
           text-align: center;
           padding-top: 1rem;
-          height: 187px;
-          max-width: 315px;
+          font-size: 0.85rem;
         }
       }
+    }
+    
+    .prev,
+    .next {
+      padding-top: 0.25rem;
     }
   }
 
