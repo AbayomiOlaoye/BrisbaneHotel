@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import { enhance } from '@cloudinary/url-gen/actions/effect';
 import styles from './About.module.scss';
-// import mobileBg from '../images/about.png';
+import mobileBg from '../images/about.png';
 import aboutBg from '../images/desk_about.png';
 import benefits from '../HotelInfo/benefits';
 
@@ -24,7 +24,7 @@ const About = () => {
         <article className={styles.mobileDiv}>
           <h2 className={styles.subtitle}>HOSPITALITY AT ITS BEST</h2>
           <img
-            src="https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709651217/about_sn64n3.png"
+            src={mobileBg}
             data-aos="zoom-in"
             alt="nice views at Brisbane Hotel & Suites"
             className={styles.aboutImgMobile}
