@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from 'react-icons/hi';
 import { MdOutlineStars } from 'react-icons/md';
 // import Slider from 'react-slick';
-import mobileBg from '../images/mobile_bg.png';
+// import mobileBg from '../images/mobile_bg.png';
 import styles from './LandingPage.module.scss';
 // import Button from '../Component/Button';
 
@@ -54,7 +54,7 @@ const LandingPage = () => {
 
   return (
     <section className={styles.container} id="home" style={{ overflow: 'hidden' }}>
-      <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
+      <img src="https://res.cloudinary.com/dn1ko8lbn/image/upload/v1709560641/mob_hero_one_rrrpez.jpg" alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
         <button type="button" className={styles.sliderBtn} onClick={() => {}}>
           <HiOutlineChevronRight className={styles.icon} />

@@ -18,8 +18,8 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/v1709560631/sd_two_zhndzt.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_fill,w_1000,h_1000/v1709560631/sd_two_zhndzt.webp',
       'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
     ],
   },
@@ -42,9 +42,8 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_fill,w_500,h_400,e_improve,e_sharpen/v1709560644/roy_one_fqegqe.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709560644/roy_two_vdzjat.webp',
     ],
   },
   {
@@ -66,9 +65,8 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709560643/exec_one_sdffwq.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709560625/exec_two_piijtr.webp',
     ],
   },
   {
@@ -90,9 +88,8 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/v1709560641/exec_suite_one_q2id0n.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709560638/exec_suite_two_ncmjma.webp',
     ],
   },
   {
@@ -114,9 +111,8 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_fill,w_500,h_400,e_improve,e_sharpen/v1709560644/roy_one_fqegqe.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/t_web asset/v1709560644/roy_two_vdzjat.webp',
     ],
   },
   {
@@ -138,9 +134,9 @@ const rooms = [
     ],
     available: true,
     image: [
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255690/brisbane/bedroom_n4qlzc.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255692/brisbane/room_one_gbqqaq.jpg',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/e_improve/v1709560643/pres_three_jb8nsb.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_crop,w_3024,h_4032,x_0,y_0,e_improve,e_sharpen/v1709560640/pres_two_ouz9tj.webp',
+      'https://res.cloudinary.com/dn1ko8lbn/image/upload/e_sharpen/v1709560643/pres_three_jb8nsb.webp',
     ],
   },
 ];

@@ -103,6 +103,7 @@
           font-size: 2.5rem;
           color: var(--lightBrown);
           transition: all 0.3s ease;
+          cursor: pointer;
 
           &:active {
             transform: scale(0.95);
@@ -127,6 +128,7 @@
 
     .scroll {
       position: absolute;
+      cursor: pointer;
       top: 80vh;
       font-size: 2rem;
       left: 88%;
