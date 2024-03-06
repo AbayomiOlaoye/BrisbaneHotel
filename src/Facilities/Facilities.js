@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -5,11 +8,12 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import styles from './Facilities.module.scss';
 import facilities from '../HotelInfo/facilities';
+import Popup from './Popup';
 
 const Facilities = () => {
   useEffect(() => {
     AOS.init({
-      duration: 600,
+      duration: 500,
       once: true,
       easing: 'ease-in',
     });
@@ -17,6 +21,8 @@ const Facilities = () => {
 
   const [showAllFacilities, setShowAllFacilities] = useState(false);
   const [currentFacilityIndex, setCurrentFacilityIndex] = useState(0);
+  const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
+  const isLargeScreen = window.innerWidth > 768;
 
   const handleNextFacility = () => {
     if (currentFacilityIndex < facilities.length - 1) {
@@ -28,6 +34,10 @@ const Facilities = () => {
     if (currentFacilityIndex > 0) {
       setCurrentFacilityIndex(currentFacilityIndex - 1);
     }
+  };
+
+  const handleRoomClick = (index) => {
+    setSelectedRoomIndex(index);
   };
 
   const handleSeeMore = () => {
@@ -44,17 +54,17 @@ const Facilities = () => {
       <h2 className={styles.subtitle}>OUR FACILITIES</h2>
       <div className={styles.facilities}>
         {facilities
-          .slice(0, showAllFacilities ? facilities.length : currentFacilityIndex + 1)
+          .slice(0, showAllFacilities ? facilities.length : (isLargeScreen ? 3 : 1))
           .map((facility, index) => (
-            <article key={facility.id} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
+            <article key={facility.id} onClick={() => handleRoomClick(index)} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>
-                  {window.innerWidth > 768 ? `${facility.id}` : `${facility.id}/12`}
+                  {isLargeScreen ? `${facility.id}` : `${facility.id}/12`}
                 </h4>
                 <h3>{facility.name}</h3>
                 <FaLongArrowAltRight className={styles.arrow} />
-                {window.innerWidth < 768 && (
+                {!isLargeScreen && (
                   <article className={styles.pointer}>
                     <MdOutlineKeyboardArrowLeft
                       className={styles.arrowLeft}
@@ -79,6 +89,9 @@ const Facilities = () => {
         <button type="button" className={styles.collapseBtn} onClick={handleCollapseFacilities}>
           See less Facilities
         </button>
+      )}
+      {selectedRoomIndex !== null && (
+        <Popup fac={facilities[selectedRoomIndex]} onClose={() => setSelectedRoomIndex(null)} />
       )}
     </section>
   );

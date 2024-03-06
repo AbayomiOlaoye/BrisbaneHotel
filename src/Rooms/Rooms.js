@@ -20,7 +20,7 @@ import RoomModal from './RoomModal';
 const Rooms = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,
       once: true,
       easing: 'ease-in',
     });

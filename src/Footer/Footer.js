@@ -234,7 +234,7 @@ const Footer = () => {
                 className={styles.formDesk}
                 onSubmit={handleSubmit}
               >
-                <h2>SUBSCRIBE TO GET FREE PROMO & EVENTS NOTIFICATION</h2>
+                <h2>Subscribe to get promo offers & event notification</h2>
                 <div className={styles.separator}>
                   <input
                     type="email"
@@ -258,11 +258,12 @@ const Footer = () => {
                 </div>
               </form>
               <div className={styles.socialMedia}>
-                <h5>CONNECT WITH US</h5>
+                <h5>Connect With Us</h5>
                 <a
                   href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
                   target="_blank"
                   rel="noreferrer"
+                  title="Ask us anything on Instagram"
                   className={styles.socialLink}
                 >
                   <FaInstagramSquare className={styles.icon} />
