@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
@@ -65,16 +66,16 @@ const Facilities = () => {
                 <h3>{facility.name}</h3>
                 <FaLongArrowAltRight className={styles.arrow} />
                 {!isLargeScreen && (
-                  <article className={styles.pointer}>
+                  <div className={styles.pointer}>
                     <MdOutlineKeyboardArrowLeft
                       className={styles.arrowLeft}
-                      onClick={handlePrevFacility}
+                      onClick={(e) => { e.stopPropagation(); handlePrevFacility(); }}
                     />
                     <MdOutlineKeyboardArrowRight
                       className={styles.arrowRight}
-                      onClick={handleNextFacility}
+                      onClick={(e) => { e.stopPropagation(); handleNextFacility(); }}
                     />
-                  </article>
+                  </div>
                 )}
               </div>
             </article>
