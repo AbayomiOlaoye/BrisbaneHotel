@@ -16,29 +16,31 @@ const Facilities = () => {
     AOS.init({
       duration: 500,
       once: true,
-      easing: 'ease-in',
+      easing: 'ease',
     });
   }, []);
 
   const [showAllFacilities, setShowAllFacilities] = useState(false);
   const [currentFacilityIndex, setCurrentFacilityIndex] = useState(0);
-  const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
+  const [selectedFacilityIndex, setSelectedFacilityIndex] = useState(null);
   const isLargeScreen = window.innerWidth > 768;
 
-  const handleNextFacility = () => {
+  const handleNextFacility = (event) => {
+    event.stopPropagation();
     if (currentFacilityIndex < facilities.length - 1) {
       setCurrentFacilityIndex(currentFacilityIndex + 1);
     }
   };
 
-  const handlePrevFacility = () => {
+  const handlePrevFacility = (event) => {
+    event.stopPropagation();
     if (currentFacilityIndex > 0) {
       setCurrentFacilityIndex(currentFacilityIndex - 1);
     }
   };
 
   const handleRoomClick = (index) => {
-    setSelectedRoomIndex(index);
+    setSelectedFacilityIndex(index);
   };
 
   const handleSeeMore = () => {
@@ -51,13 +53,13 @@ const Facilities = () => {
   };
 
   return (
-    <section className={styles.container} id="facilities" style={{ overflow: 'hidden' }}>
+    <section className={styles.container} id="facilities">
       <h2 className={styles.subtitle}>OUR FACILITIES</h2>
       <div className={styles.facilities}>
         {facilities
           .slice(0, showAllFacilities ? facilities.length : (isLargeScreen ? 3 : 1))
           .map((facility, index) => (
-            <article key={facility.id} onClick={() => handleRoomClick(index)} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
+            <article key={facility.id} onClick={() => handleRoomClick(index)} id={index === selectedFacilityIndex ? 'show' : ''} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>
@@ -69,11 +71,11 @@ const Facilities = () => {
                   <div className={styles.pointer}>
                     <MdOutlineKeyboardArrowLeft
                       className={styles.arrowLeft}
-                      onClick={(e) => { e.stopPropagation(); handlePrevFacility(); }}
+                      onClick={(event) => handlePrevFacility(event)}
                     />
                     <MdOutlineKeyboardArrowRight
                       className={styles.arrowRight}
-                      onClick={(e) => { e.stopPropagation(); handleNextFacility(); }}
+                      onClick={(event) => handleNextFacility(event)}
                     />
                   </div>
                 )}
@@ -91,8 +93,11 @@ const Facilities = () => {
           See less Facilities
         </button>
       )}
-      {selectedRoomIndex !== null && (
-        <Popup fac={facilities[selectedRoomIndex]} onClose={() => setSelectedRoomIndex(null)} />
+      {selectedFacilityIndex !== null && (
+        <Popup
+          fac={facilities[selectedFacilityIndex]}
+          onClose={() => setSelectedFacilityIndex(null)}
+        />
       )}
     </section>
   );

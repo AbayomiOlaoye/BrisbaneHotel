@@ -26,7 +26,7 @@ const Rooms = () => {
     });
   }, []);
 
-  const [displayedRooms, setDisplayedRooms] = useState(4);
+  const [displayedRooms, setDisplayedRooms] = useState(3);
   const [showAllRooms, setShowAllRooms] = useState(false);
   const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
 
@@ -40,7 +40,7 @@ const Rooms = () => {
 
   const handleCollapseRooms = () => {
     setShowAllRooms(false);
-    setDisplayedRooms(4);
+    setDisplayedRooms(3);
   };
 
   const handleSubmit = (detail, event) => {
@@ -120,7 +120,7 @@ const Rooms = () => {
                       type="button"
                       data-aos="zoom-out"
                       className={styles.bookBtn}
-                      onClick={() => handleSubmit(room, event)}
+                      onClick={(event) => handleSubmit(room, event)}
                     >
                       Book Now
                     </button>

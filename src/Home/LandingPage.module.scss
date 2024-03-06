@@ -167,6 +167,16 @@
   }
   
   @media screen and (min-width: 768px) {
+    height: 140vh;
+
+    .overlay {
+      height: 140vh;
+    }
+
+    .bgImg {
+      height: 140vh;
+    }
+
     .titleDiv {
       top: 30%;
       padding: 0 5%;

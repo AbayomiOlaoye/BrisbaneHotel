@@ -165,7 +165,7 @@ const Footer = () => {
             width="100%"
             height="100%"
             className={styles.mapIframe}
-            allowfullscreen
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
@@ -225,7 +225,7 @@ const Footer = () => {
               width="100%"
               height="100%"
               className={styles.mapIframe}
-              allowfullscreen
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

@@ -20,7 +20,7 @@ const rooms = [
     image: [
       'https://res.cloudinary.com/dn1ko8lbn/image/upload/v1709560631/sd_two_zhndzt.webp',
       'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_fill,w_1000,h_1000/v1709560631/sd_two_zhndzt.webp',
-      'https://res.cloudinary.com/dn1ko8lbn/image/upload/c_scale,w_500/f_auto,q_auto:eco/v1708255694/brisbane/walky_huxhxf.jpg',
+      '',
     ],
   },
   {
