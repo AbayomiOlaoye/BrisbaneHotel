@@ -5,25 +5,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import styles from './RoomModal.module.scss';
+import styles from './Popup.module.scss';
 
 const Popup = ({ fac, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % fac.image.length);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % fac.views.length);
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? fac.image.length - 1 : prevIndex - 1));
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? fac.views.length - 1 : prevIndex - 1));
   };
 
   const handleImageClick = (index) => {
     setCurrentImageIndex(index);
   };
 
-  const handleSubmit = (detail) => {
-    const message = `Hello, I would like to ask for a reservation with the following information: Type of Room ${detail.name}`;
+  const handleSubmit = () => {
+    const message = 'Hello, I would like to ask more anout your hotel';
     window.open(`https://wa.me/${2348031391167}?text=${message}`, '_blank');
   };
 
@@ -31,9 +31,9 @@ const Popup = ({ fac, onClose }) => {
     <section className={styles.modalContainer} onClick={onClose}>
       <div className={styles.white}>
         <article className={styles.modalImages} onClick={(e) => e.stopPropagation()}>
-          <img src={fac.image[currentImageIndex]} alt={fac.info} className={styles.modalImg} />
+          <img src={fac.views[currentImageIndex]} alt={fac.info} className={styles.modalImg} />
           <div className={styles.thumbnail}>
-            {fac.image.map((img, index) => (
+            {fac.views.map((img, index) => (
               <div className={styles.tag} key={img}>
                 <img
                   src={img}
@@ -56,14 +56,13 @@ const Popup = ({ fac, onClose }) => {
         <article className={styles.modalInfo}>
           <h3 className={styles.modalTitle}>{fac.name}</h3>
           <p className={styles.modalDesc}>{fac.description}</p>
-          <p className={styles.modalText}>Let’s Reserve a Space For You</p>
           <AiFillCloseCircle onClick={onClose} className={styles.exitMenu} />
           <button
             type="button"
             className={styles.bookBtn}
-            onClick={() => handleSubmit(fac)}
+            onClick={() => handleSubmit()}
           >
-            Book Now
+            Ask Us
           </button>
         </article>
       </div>

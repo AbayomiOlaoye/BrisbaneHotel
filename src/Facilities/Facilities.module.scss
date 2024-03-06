@@ -108,6 +108,7 @@
           width: 10%;
     
           .arrowLeft {
+            z-index: 10000;
             @extend .absolute;
             top: 8%;
             left: 0;
@@ -119,6 +120,7 @@
           }
 
           .arrowRight {
+            z-index: 10000;
             @extend .absolute;
             top: -525%;
             left: 91%;
