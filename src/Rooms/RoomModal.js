@@ -58,10 +58,13 @@ const RoomModal = ({ room, onClose }) => {
           <p className={styles.modalDesc}>{room.description}</p>
           <h3 className={styles.modalTitle}>Room Features</h3>
           <ul className={styles.modalFeatures}>
-            {room.features.map((feature) => (
-              <li key={feature} className={styles.feature}>
-                {feature}
-              </li>
+            {room.features.map((feature, index) => (
+              <>
+                <li key={feature} className={styles.feature}>
+                  {feature}
+                </li>
+                {(index + 1) % 4 === 0 && <span />}
+              </>
             ))}
           </ul>
           <h3 className={styles.modalTitle}>

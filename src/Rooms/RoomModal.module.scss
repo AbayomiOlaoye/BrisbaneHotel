@@ -59,7 +59,6 @@
   width: 100vw;
   background: rgba(95, 37, 14, 0.9);
   backdrop-filter: blur(5px);
-  overflow: auto;
 
   .white {
     background-color: white;
@@ -67,6 +66,7 @@
     width: 90vw;
     margin: 2rem auto;
     height: 90vh;
+    overflow: auto;
   }
 
   .modalImages {
@@ -129,6 +129,7 @@
   }
 
   .modalInfo {
+    margin: 2rem auto 0;
     p {
       font-size: 0.85rem;
       padding: 0 0.5rem;
@@ -158,8 +159,8 @@
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       background: var(--darkBrown);
       color: var(--white);
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       padding: 0.5rem;
       cursor: pointer;
@@ -175,7 +176,9 @@
       }
 
       @media screen and (min-width: 768px) {
-        left: 65%;
+        left: 60%;
+        top: 75%;
+        font-size: 0.85rem;
       }
     }
 
@@ -194,8 +197,12 @@
   }
 
   @media screen and (min-width: 768px) {
+    .modalInfo {
+      width: 80%;
+      margin: 1rem auto 0;
+    }
     .white {
-      width: 50vw;
+      width: 40vw;
     }
 
     .modalDesc {
