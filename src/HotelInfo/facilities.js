@@ -49,7 +49,7 @@ const facilities = [
   {
     id: '06',
     name: 'Spa & Wellness Center',
-    description: 'Escape the ordinary and discover a sanctuary of serenity at the [Hotel Name] Spa. Our expert therapists offer a range of rejuvenating treatments designed to soothe your mind, body, and soul in our tranquil treatment rooms.',
+    description: "Escape the ordinary and discover a sanctuary of serenity at the Brisbane Hotel's Spa. Our expert therapists offer a range of rejuvenating treatments designed to soothe your mind, body, and soul in our tranquil treatment rooms.",
     views: [
       'https://res.cloudinary.com/dn1ko8lbn/image/upload/q_auto:best/v1709732354/spa_r7txdh.jpg',
       'https://res.cloudinary.com/dn1ko8lbn/image/upload/e_auto_brightness,q_auto:best/v1709732348/spa_1_to3kot.webp',

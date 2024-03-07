@@ -34,9 +34,7 @@ const Facilities = () => {
 
   const handlePrevFacility = (event) => {
     event.stopPropagation();
-    if (currentFacilityIndex > 0) {
-      setCurrentFacilityIndex((prevIndex) => (prevIndex === 0 ? facilities.length - 1 : prevIndex - 1));
-    }
+    setCurrentFacilityIndex((prevIndex) => (prevIndex === 0 ? facilities.length - 1 : prevIndex - 1));
   };
 
   const handleRoomClick = (index) => {
@@ -59,7 +57,7 @@ const Facilities = () => {
         {facilities
           .slice(0, showAllFacilities ? facilities.length : (isLargeScreen ? 3 : facilities.length))
           .map((facility, index) => (
-            <article key={facility.id} onClick={() => handleRoomClick(index)} className={`${styles.fade} ${index === currentFacilityIndex ? `{${styles.facility}  animate__rotateInDownRight}` : styles.hide}`}>
+            <article key={facility.id} onClick={() => handleRoomClick(index)} className={`${styles.fade} ${styles.facility} ${index === currentFacilityIndex ? styles.active : styles.hide}`}>
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>

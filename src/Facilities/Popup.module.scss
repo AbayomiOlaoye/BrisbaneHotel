@@ -132,6 +132,8 @@
   .modalInfo {
     margin: 2rem auto 0;
     text-align: center;
+    width: 80%;
+
     p {
       font-size: 0.85rem;
       padding: 0 0.5rem;
@@ -155,22 +157,24 @@
 
     .bookBtn {
       position: absolute;
-      top: 70%;
+      top: 80%;
       left: 70%;
       border: none;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       background: var(--darkBrown);
+      opacity: 0.9;
       color: var(--white);
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       padding: 0.5rem;
       cursor: pointer;
+      font-size: 0.8rem;
       transition: 0.3s;
 
       &:hover {
-        background: var(--lightBrown);
-        color: var(--darkBrown);
+        opacity: 1;
+        color: white;
       }
 
       &:active {
@@ -186,7 +190,7 @@
 
     .exitMenu {
       position: absolute;
-      top: 5%;
+      top: 6%;
       left: 87%;
       cursor: pointer;
       color: var(--white);
