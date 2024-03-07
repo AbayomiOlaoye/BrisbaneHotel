@@ -31,6 +31,10 @@ const Footer = () => {
     return null;
   };
 
+  // const openTerms = () => {
+  //   window.open('Brisbane_terms_&_conditions.pdf', '_blank');
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -107,7 +111,7 @@ const Footer = () => {
               <article className={styles.emailDiv}>
                 <MdAttachEmail className={styles.icon} />
                 <a
-                  href="mailto:info@brisbanehotels.com"
+                  href="mailto:info@brisbanehotel.ng"
                   className={styles.email}
                 >
                   info@brisbanehotels.com
@@ -210,7 +214,7 @@ const Footer = () => {
               <article className={styles.emailDiv}>
                 <MdAttachEmail className={styles.icon} />
                 <a
-                  href="mailto:info@brisbanehotels.com"
+                  href="mailto:info@brisbanehotel.ng"
                   className={styles.email}
                 >
                   info@brisbanehotel.ng
@@ -278,6 +282,7 @@ const Footer = () => {
             {` ${currentYear} `}
             Brisbane Hotel & Suites. All Rights Reserved.
           </p>
+
         </div>
       </footer>
     </>

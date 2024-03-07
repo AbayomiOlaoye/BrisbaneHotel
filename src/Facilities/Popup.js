@@ -23,7 +23,7 @@ const Popup = ({ fac, onClose }) => {
   };
 
   const handleSubmit = () => {
-    const message = 'Hello, I would like to ask more anout your hotel';
+    const message = 'Hello, I would like to know more about your hotel services';
     window.open(`https://wa.me/${2348031391167}?text=${message}`, '_blank');
   };
 
