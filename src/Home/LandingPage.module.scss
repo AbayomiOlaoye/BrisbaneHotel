@@ -74,19 +74,23 @@
     height: 110vh;
     object-fit: cover;
     z-index: -1;
-    animation: fadeAnimation 1s ease-in-out infinite alternate;
   }
 
   @keyframes fadeAnimation {
-    0% {
-      opacity: 0.4;
+    from {
+      opacity: 0.3;
     }
-    50% {
+    to {
       opacity: 0.7;
     }
-    100% {
-      opacity: 0.5;
-    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .visible {
+    animation: fadeAnimation 1s ease-in-out infinite alternate;
   }
 
   .overlay {

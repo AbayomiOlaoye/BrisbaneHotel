@@ -30,7 +30,7 @@ const LandingPage = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, [slides.length]);
@@ -45,7 +45,14 @@ const LandingPage = () => {
 
   return (
     <section className={styles.container} id="home" style={{ overflow: 'hidden' }}>
-      <img src={slides[currentSlide]} alt="Brisbane views" className={styles.bgImg} />
+      {slides.map((slide, index) => (
+        <img
+          key={slide}
+          src={slide}
+          alt="Brisbane views"
+          className={`${styles.bgImg} ${currentSlide === index ? `{${styles.visible} animate__fadeInRight}` : styles.hide}`}
+        />
+      ))}
       <div className={styles.slider}>
         <button type="button" className={styles.sliderBtn} onClick={nextSlide}>
           <HiOutlineChevronRight className={styles.icon} />
