@@ -39,15 +39,6 @@
   @extend .relative;
   color: #fff;
 
-  // .slide {
-  //   // position: absolute;
-  //   width: 100%;
-  //   height: 400px;
-  //   background-size: cover;
-  //   background-position: center;
-  //   opacity: 0;
-  //   transition: opacity 0.5s ease;
-  // }
   .slider {
     @extend .absolute;
     top: 40%;
@@ -83,11 +74,24 @@
     height: 110vh;
     object-fit: cover;
     z-index: -1;
+    animation: fadeAnimation 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes fadeAnimation {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0.5;
+    }
   }
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    height: 110vh;
     width: 100%;
     position: absolute;
     top: 0;
@@ -128,7 +132,8 @@
       text-transform: uppercase;
       font-size: 2.25rem;
       max-width: 320px;
-      // width: 90%;
+      color: var(--lightBrown);
+      z-index: 6000;
     }
 
     .heroText {
@@ -186,7 +191,6 @@
         font-size: 4rem;
         max-width: unset;
         width: 100%;
-        color: var(--lightBrown);
       }
 
       .heroText {

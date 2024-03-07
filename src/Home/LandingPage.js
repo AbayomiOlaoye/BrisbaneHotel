@@ -1,17 +1,14 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable arrow-body-style */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from 'react-icons/hi';
 import { MdOutlineStars } from 'react-icons/md';
-// import Slider from 'react-slick';
 import mobileBg from '../images/mobile_bg.png';
 import styles from './LandingPage.module.scss';
-// import Button from '../Component/Button';
 
 const LandingPage = () => {
   useEffect(() => {
@@ -20,51 +17,46 @@ const LandingPage = () => {
       once: true,
     });
   }, []);
-  // const [currentSlide, setCurrentSlide] = useState(0);
-  // const slides = [
-  //   mobileBg,
-  //   mobileBg,
-  //   mobileBg,
-  //   mobileBg,
-  //   mobileBg,
-  // ];
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 200,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    mobileBg,
+    'https://res.cloudinary.com/dn1ko8lbn/image/upload/q_auto:best/v1709732348/reception_uwo8eg.webp',
+    'https://res.cloudinary.com/dn1ko8lbn/image/upload/q_auto:best/v1709732336/recep_two_kmmtnn.webp',
+    'https://res.cloudinary.com/dn1ko8lbn/image/upload/q_auto:best/v1709560616/club_b7ctps.jpg',
+    'https://res.cloudinary.com/dn1ko8lbn/image/upload/v1709560618/premium_pool_nuqaua.jpg',
+  ];
 
-  // const nextSlide = () => {
-  //   setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
-  // };
-  // <Slider {...settings}>
-  //         {slides.map((image, index) => (
-  //           <div key={image} className={styles.sliderImg}>
-  //             <img src={image} alt={`Brisbane views ${index + 1}`} />
-  //           </div>
-  //         ))}
-  //       </Slider>
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
+    }, 4000);
 
-  // const prevSlide = () => {
-  //   setCurrentSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
-  // };
+    return () => clearInterval(intervalId);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+  };
 
   return (
     <section className={styles.container} id="home" style={{ overflow: 'hidden' }}>
-      <img src={mobileBg} alt="Brisbane views" className={styles.bgImg} />
+      <img src={slides[currentSlide]} alt="Brisbane views" className={styles.bgImg} />
       <div className={styles.slider}>
-        <button type="button" className={styles.sliderBtn} onClick={() => {}}>
+        <button type="button" className={styles.sliderBtn} onClick={nextSlide}>
           <HiOutlineChevronRight className={styles.icon} />
         </button>
-        <button type="button" className={styles.sliderBtn} onClick={() => {}}>
+        <button type="button" className={styles.sliderBtn} onClick={prevSlide}>
           <HiOutlineChevronLeft className={styles.icon} />
         </button>
       </div>
 
-      <div className={styles.date} data-aos-delay="1000" data-aos-duration="1000" data-aos="zoom-in">
+      <div className={styles.overlay} />
+      <div className={styles.date} data-aos-delay="800" data-aos-duration="800" data-aos="zoom-in">
         <MdOutlineStars className={styles.icon} />
         Since 2018
       </div>
