@@ -79,7 +79,7 @@
       border: none;
       padding: 0.5rem;
       border-radius: 15px;
-      left: 69.5%;
+      left: 64vw;
       top: 55%;
       transition: all 0.6s ease;
 
@@ -92,7 +92,7 @@
     .emailInput {
       background: #E7B23F54;
       border: none;
-      width: 80%;
+      width: 70vw;
       padding: 1rem 1.5rem;
       border-radius: 15px;
       color: #fff;
@@ -180,6 +180,12 @@
     a {
       color: var(--white);
       padding-top: 0.5rem;
+    }
+
+    .term {
+      font-size: 0.75rem;
+      padding-top: 1rem;
+      color: var(--lightBrown);
     }
   }
 }

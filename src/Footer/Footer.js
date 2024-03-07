@@ -31,9 +31,11 @@ const Footer = () => {
     return null;
   };
 
-  // const openTerms = () => {
-  //   window.open('Brisbane_terms_&_conditions.pdf', '_blank');
-  // };
+  const openTerms = (e) => {
+    if (e.target.href === 'Brisbane_terms_&_conditions.pdf') {
+      window.open('Brisbane_terms_&_conditions.pdf', '_blank');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -114,7 +116,7 @@ const Footer = () => {
                   href="mailto:info@brisbanehotel.ng"
                   className={styles.email}
                 >
-                  info@brisbanehotels.com
+                  info@brisbanehotel.ng
                 </a>
               </article>
             </div>
@@ -180,6 +182,7 @@ const Footer = () => {
             {` ${currentYear} `}
             Brisbane Hotel & Suites. All Rights Reserved.
           </p>
+          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={(e) => openTerms(e)} className={styles.terms}>Terms & Conditions</a>
         </div>
       </footer>
       <footer className={styles.footerDesktop} id="contact">
@@ -282,7 +285,7 @@ const Footer = () => {
             {` ${currentYear} `}
             Brisbane Hotel & Suites. All Rights Reserved.
           </p>
-
+          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={openTerms} className={styles.terms}>Terms & Conditions</a>
         </div>
       </footer>
     </>
