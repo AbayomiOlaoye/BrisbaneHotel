@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
+import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaLongArrowAltRight } from 'react-icons/fa';
@@ -27,15 +29,13 @@ const Facilities = () => {
 
   const handleNextFacility = (event) => {
     event.stopPropagation();
-    if (currentFacilityIndex < facilities.length - 1) {
-      setCurrentFacilityIndex(currentFacilityIndex + 1);
-    }
+    setCurrentFacilityIndex((prevIndex) => (prevIndex + 1) % facilities.length);
   };
 
   const handlePrevFacility = (event) => {
     event.stopPropagation();
     if (currentFacilityIndex > 0) {
-      setCurrentFacilityIndex(currentFacilityIndex - 1);
+      setCurrentFacilityIndex((prevIndex) => (prevIndex === 0 ? facilities.length - 1 : prevIndex - 1));
     }
   };
 
@@ -53,13 +53,13 @@ const Facilities = () => {
   };
 
   return (
-    <section className={styles.container} id="facilities">
+    <section className={styles.container} id="facilities" style={{ overflow: 'hidden' }}>
       <h2 className={styles.subtitle}>OUR FACILITIES</h2>
       <div className={styles.facilities}>
         {facilities
-          .slice(0, showAllFacilities ? facilities.length : (isLargeScreen ? 3 : 1))
+          .slice(0, showAllFacilities ? facilities.length : (isLargeScreen ? 3 : facilities.length))
           .map((facility, index) => (
-            <article key={facility.id} onClick={() => handleRoomClick(index)} id={index === selectedFacilityIndex ? 'show' : ''} className={`${styles.facility} ${styles.fade} ${index === currentFacilityIndex ? styles.active : ''}`} data-aos="fade-right">
+            <article key={facility.id} onClick={() => handleRoomClick(index)} className={`${styles.fade} ${index === currentFacilityIndex ? `{${styles.facility}  animate__rotateInDownRight}` : styles.hide}`}>
               <img src={facility.views[0]} className={styles.img} alt={facility.name} />
               <div className={styles.text}>
                 <h4>
