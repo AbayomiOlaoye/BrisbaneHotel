@@ -177,12 +177,12 @@ const Footer = () => {
           />
         </article>
         <div className={styles.footerBottom}>
+          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={(e) => openTerms(e)} className={styles.terms}>Terms & Conditions</a>
           <p className={styles.copyRight}>
             &copy;
             {` ${currentYear} `}
             Brisbane Hotel & Suites. All Rights Reserved.
           </p>
-          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={(e) => openTerms(e)} className={styles.terms}>Terms & Conditions</a>
         </div>
       </footer>
       <footer className={styles.footerDesktop} id="contact">
@@ -280,12 +280,12 @@ const Footer = () => {
           </article>
         </div>
         <div className={styles.footerBottom}>
+          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={openTerms} className={styles.terms}>Terms & Conditions</a>
           <p className={styles.copyRight}>
             &copy;
             {` ${currentYear} `}
             Brisbane Hotel & Suites. All Rights Reserved.
           </p>
-          <a href="Brisbane_terms_&_conditions.pdf" target="_blank" rel="noreferrer" onClick={openTerms} className={styles.terms}>Terms & Conditions</a>
         </div>
       </footer>
     </>
