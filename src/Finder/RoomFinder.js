@@ -64,7 +64,7 @@ const RoomFinder = () => {
               <option value="Executive Room">Executive Room - #40,000</option>
               <option value="Executive Suite">Executive Suite - #50,000</option>
               <option value="Royal Suite">Royal Suite - #60,000</option>
-              <option value="Presidential Suite">Presidential Suite - #70,000</option>
+              <option value="Presidential Suite">Presidential Suite - #80,000</option>
             </select>
           </div>
           <div className={styles.formGroup}>
