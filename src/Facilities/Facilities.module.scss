@@ -81,7 +81,7 @@
       width: 100%;
       margin: 0 auto;
       transition: 0.3s ease;
-
+      animation: fadeAnimation 0.5s ease-in-out;
     }
 
     .hide {
@@ -96,6 +96,16 @@
         height: 250px;
         min-width: 100%;
         object-fit: cover;
+        animation: fadeAnimation 0.7s ease;
+      }
+
+      @keyframes fadeAnimation {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.5;
+        }
       }
 
       .text {
