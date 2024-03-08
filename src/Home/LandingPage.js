@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from 'react-icons/hi';
 import { MdOutlineStars } from 'react-icons/md';
+import reception from '../images/reception.webm';
 import mobileBg from '../images/mobile_bg.png';
 import styles from './LandingPage.module.scss';
 
@@ -45,6 +46,9 @@ const LandingPage = () => {
 
   return (
     <section className={styles.container} id="home" style={{ overflow: 'hidden' }}>
+      <video autoPlay muted loop className={styles.videoBg}>
+        <source src={reception} type="video/webm" />
+      </video>
       {slides.map((slide, index) => (
         <img
           key={slide}
