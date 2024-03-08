@@ -7,7 +7,7 @@ import {
   FaPhoneSquareAlt,
   FaInstagramSquare,
 } from 'react-icons/fa';
-import { FaSquareXTwitter } from 'react-icons/fa6';
+import { FaSquareXTwitter, FaSquareFacebook } from 'react-icons/fa6';
 import styles from './Footer.module.scss';
 import logo from '../images/brisbaneDeep.svg';
 
@@ -172,6 +172,15 @@ const Footer = () => {
                 >
                   <FaSquareXTwitter className={styles.icon} />
                 </a>
+                <a
+                  href="https://www.facebook.com/BrisbaneHotelsLimited/"
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Ask us anything on Facebook"
+                  className={styles.socialLink}
+                >
+                  <FaSquareFacebook className={styles.icon} />
+                </a>
               </div>
             </div>
           </div>
@@ -294,6 +303,15 @@ const Footer = () => {
                     className={styles.socialLink}
                   >
                     <FaSquareXTwitter className={styles.icon} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/BrisbaneHotelsLimited/"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Ask us anything on Facebook"
+                    className={styles.socialLink}
+                  >
+                    <FaSquareFacebook className={styles.icon} />
                   </a>
                 </div>
               </div>
