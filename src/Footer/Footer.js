@@ -7,7 +7,7 @@ import {
   FaPhoneSquareAlt,
   FaInstagramSquare,
 } from 'react-icons/fa';
-// import { FaSquareXTwitter } from 'react-icons/fa6';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 import styles from './Footer.module.scss';
 import logo from '../images/brisbaneDeep.svg';
 
@@ -155,14 +155,24 @@ const Footer = () => {
             />
             <div className={styles.socialMedia}>
               <h5>CONNECT WITH US</h5>
-              <a
-                href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
-                target="_blank"
-                rel="noreferrer"
-                className={styles.socialLink}
-              >
-                <FaInstagramSquare className={styles.icon} />
-              </a>
+              <div className={styles.socialLinkDiv}>
+                <a
+                  href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.socialLink}
+                >
+                  <FaInstagramSquare className={styles.icon} />
+                </a>
+                <a
+                  href="https://twitter.com/Brisbanehotelng"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.socialLink}
+                >
+                  <FaSquareXTwitter className={styles.icon} />
+                </a>
+              </div>
             </div>
           </div>
           <iframe
@@ -266,15 +276,26 @@ const Footer = () => {
               </form>
               <div className={styles.socialMedia}>
                 <h5>Connect With Us</h5>
-                <a
-                  href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
-                  target="_blank"
-                  rel="noreferrer"
-                  title="Ask us anything on Instagram"
-                  className={styles.socialLink}
-                >
-                  <FaInstagramSquare className={styles.icon} />
-                </a>
+                <div className={styles.socialLinkDiv}>
+                  <a
+                    href="https://www.instagram.com/brisbaneclub45?igsh=OGQ5ZDc2ODk2ZA=="
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Ask us anything on Instagram"
+                    className={styles.socialLink}
+                  >
+                    <FaInstagramSquare className={styles.icon} />
+                  </a>
+                  <a
+                    href="https://twitter.com/Brisbanehotelng"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Ask us anything on Twitter"
+                    className={styles.socialLink}
+                  >
+                    <FaSquareXTwitter className={styles.icon} />
+                  </a>
+                </div>
               </div>
             </div>
           </article>
