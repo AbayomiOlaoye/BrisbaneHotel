@@ -37,6 +37,7 @@
   height: 110vh;
   overflow: hidden;
   @extend .relative;
+  background-color: rgba(201, 118, 24, 0.1);
   color: #fff;
 
   .slider {
@@ -74,14 +75,15 @@
     height: 110vh;
     object-fit: cover;
     z-index: -1;
+    animation: fadeAnimation 3s ease-in-out infinite alternate;
   }
 
   @keyframes fadeAnimation {
     from {
-      opacity: 0.3;
+      opacity: 0;
     }
     to {
-      opacity: 0.7;
+      opacity: 0.5;
     }
   }
 
@@ -89,9 +91,9 @@
     display: none;
   }
 
-  .visible {
-    animation: fadeAnimation 1s ease-in-out infinite alternate;
-  }
+  // .visible {
+  //   animation: fadeAnimation 1s ease-in-out infinite alternate;
+  // }
 
   .overlay {
     background: rgba(0, 0, 0, 0.7);
