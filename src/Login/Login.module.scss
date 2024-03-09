@@ -153,4 +153,36 @@
       margin: 0 auto;
     }
   }
+
+  .error {
+    color: red;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .success {
+    position: absolute;
+    @extend .flexCol;
+    @extend .justContentCenter;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lightBrown);
+    z-index: 60000;
+    color: var(--darkBrown);
+    text-align: center;
+    gap: 1rem;
+
+    a {
+      color: var(--white);
+      text-decoration: underline;
+
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: var(--darkBrown);
+      }
+    }
+  }
 }
