@@ -21,7 +21,7 @@ const Register = () => {
     password: '',
   });
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -98,6 +98,7 @@ const Register = () => {
             <iframe
               src="https://lottie.host/embed/6bc5cd40-a59b-4dae-a8b4-89bedc2cb175/aVQdT5lnd1.json"
               title="Successful Registration"
+              frameBorder="none"
             />
             <p>
               <Link to="/login">Now let&apos;s Login</Link>
