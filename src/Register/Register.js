@@ -21,7 +21,7 @@ const Register = () => {
     password: '',
   });
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
